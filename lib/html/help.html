@@ -1,441 +1,270 @@
 <div class="search-form">
   <label>
     <span class="material-symbols-outlined">search</span>
-    <input type="text" placeholder="ヘルプ内を検索" />
+    <input type="text" placeholder="도움말 내를 검색" />
   </label>
   <button class="to-clear">Clear</button>
 </div>
 
 <details>
-  <summary>キーボードショートカット</summary>
+  <summary>키보드 단축키</summary>
   <table>
-    <tr><th>キー</th><th>説明</th></tr>
-    <tr><th>(空の発言欄で)<br>↑</th><td>その発言欄での直前の発言を呼び出す</td></tr>
-    <tr><th>Ctrl+↑<br>Ctrl+↓</th><td>名前の選択を変更する。</td></tr>
-    <tr><th>Ctrl+←<br>Ctrl+→</th><td>メインのタブを変更する。</td></tr>
+    <tr><th>키</th><th>설명</th></tr>
+    <tr><th>(빈 발언란에서)<br>↑</th><td>그 발언란에서의 직전의 발언을 불러낸다</td></tr>
+    <tr><th>Ctrl+↑<br>Ctrl+↓</th><td>이름 선택을 변경한다</td></tr>
+    <tr><th>Ctrl+←<br>Ctrl+→</th><td>메인 탭을 변경한다</td></tr>
   </table>
 </details>
 
 <details id="help-sub-form">
-  <summary>サブ発言欄（ダイス欄）</summary>
+  <summary>서브 발언란 (다이스란)</summary>
   <div class="form-dice" style="display:inline-block;width:18em;margin:0;padding:1em;">
-    外観：<div class="dice-button"><textarea data-lock="dice" style="height:1.7em;" disabled>2d6</textarea><i></i><button></button></div>
+    외견: <div class="dice-button"><textarea data-lock="dice" style="height:1.7em;" disabled>2d6</textarea><i></i><button></button></div>
   </div>
   <p>
-    　よく使うダイスコマンドを置いておいたり、複数のNPCを扱う時に発言欄が追加で欲しいとき、単純にメモ欄として……などに利用できます。<br>
-    　アイコンをクリックすると<span class="comm-icon dice"></span>→<span class="comm-icon name"></span>→<span class="comm-icon off"></span>→<span class="comm-icon memo"></span>→<span class="comm-icon full"></span>の順でアイコンと挙動が変わります。
+    자주 사용하는 다이스 커맨드를 놓아 두거나 복수의 NPC를 취급할 때에 발언란을 추가로 원할 때, 단순하게 메모란으로서 ……등에 이용할 수 있습니다.<br>
+    　아이콘을 클릭하면<span class="comm-icon dice"></span>→<span class="comm-icon name"></span>→<span class="comm-icon off"></span>→<span class="comm-icon memo"></span>→<span class="comm-icon full"></span>의 순서로 아이콘과 기능이 바뀝니다
   </p>
   <table>
-    <tr><th>アイコン</th><th>説明</th></tr>
-    <tr><th><span class="comm-icon full"></span></th><td>内容を送信しても欄に内容が残る。</td></tr>
-    <tr><th><span class="comm-icon dice"></span></th><td>内容を送信しても欄にコマンドが残る。</td></tr>
-    <tr><th><span class="comm-icon name"></span></th><td>内容を送信すると欄に発言者名が残る。</td></tr>
-    <tr><th><span class="comm-icon off"></span></th><td>内容を送信すると欄が空になる。</td></tr>
-    <tr><th><span class="comm-icon memo"></span></th><td>内容を送信できない。メモ欄。</td></tr>
+    <tr><th>아이콘</th><th>설명</th></tr>
+    <tr><th><span class="comm-icon full"></span></th><td>내용을 송신해도 란에 내용이 남는다.</td></tr>
+    <tr><th><span class="comm-icon dice"></span></th><td>내용을 송신해도 란에 커맨드가 남는다.</td></tr>
+    <tr><th><span class="comm-icon name"></span></th><td>내용을 송신하면 란에 발언자명이 남는다.</td></tr>
+    <tr><th><span class="comm-icon off"></span></th><td>내용을 송신하면 란이 비워진다.</td></tr>
+    <tr><th><span class="comm-icon memo"></span></th><td>내용을 송신할 수 없다. 메모란.</td></tr>
   </table>
-  <p>　また、<button onclick="boxOpen('config-user','config-palette')">個人設定</button>から、Enterおよび⏎ボタンの挙動は変更できます。</p>
+  <p>　또한, <button onclick="boxOpen('config-user','config-palette')">개인 설정</button>에서 Enter 및 ⏎ 버튼의 기능은 변경할 수 있습니다.</p>
 </details>
 
 <details id="help-text-rule">
   <summary>テキスト装飾・整形</summary>
   <table class="help-text-rule-table">
-    <tr><th>記述</th><th>結果</th><th>説明</th></tr>
-    <tr><th>&lt;ruby&gt;テキスト&lt;rt&gt;てきすと&lt;/ruby&gt;</th><td><ruby>テキスト<rt>てきすと</rt></ruby></td><td>ルビ（ふりがな）を振る</td></tr>
+    <tr><th>작성</th><th>효과</th><th>설명</th></tr>
+    <tr><th>&lt;ruby&gt;テキスト&lt;rt&gt;てきすと&lt;/ruby&gt;</th><td><ruby>テキスト<rt>てきすと</rt></ruby></td><td>루비 문자(후리가나)를 작성한다</td></tr>
     <tr><th>&lt;em&gt;テキスト&lt;/em&gt;</th><td><em>テキスト</em></td><td>傍点を振る</td></tr>
-    <tr><th>&lt;mi&gt;テキスト&lt;/mi&gt;</th><td><span class="serif">テキスト</span></td><td>明朝体（セリフ体）にする</td></tr>
-    <tr><th>&lt;b&gt;テキスト&lt;/b&gt;</th><td><b>テキスト</b></td><td>太字にする</td></tr>
-    <tr><th>&lt;i&gt;テキスト&lt;/i&gt;</th><td><i style="color:inherit;">テキスト</i></td><td>斜体にする</td></tr>
-    <tr><th>&lt;s&gt;テキスト&lt;/s&gt;</th><td><s>テキスト</s></td><td>打消線を引く</td></tr>
-    <tr><th>&lt;u&gt;テキスト&lt;/u&gt;</th><td><span class="under">テキスト</span></td><td>下線を引く</td></tr>
-    <tr><th>&lt;o&gt;テキスト&lt;/o&gt;</th><td><span class="over">テキスト</span></td><td>上線を引く</td></tr>
-    <tr><th>&lt;c:#ee9900&gt;テキスト&lt;/c&gt;</th><td><span style="color:#ee9900">テキスト</span></td><td>文字色を変える。<br>カラーコードは任意に変えてよい。</td></tr>
-    <tr><th>&lt;big&gt;テキスト&lt;/big&gt;</th><td><span class="large">テキスト</span></td><td>文字を大きくする。（150%）<br>３重の入れ子まで可。（150%→225%→337.5%）</td></tr>
-    <tr><th>&lt;small&gt;テキスト&lt;/small&gt;</th><td><span class="small">テキスト</span></td><td>文字を小さくする。（80%）</td></tr>
-    <tr><th>&lt;hide&gt;テキスト&lt;/hide&gt;</th><td><span class="hide">テキスト</span></td><td>文字を透明にする。<br>（ドラッグで選択状態にすると見える）</td></tr>
-    <tr><th>&lt;h1&gt;テキスト&lt;/h1&gt;</th><td class="logs"><h1>テキスト</h1></td><td>見出しレベル1</td></tr>
-    <tr><th>&lt;h2&gt;テキスト&lt;/h2&gt;</th><td class="logs"><h2>テキスト</h2></td><td>見出しレベル2</td></tr>
-    <tr><th>&lt;h3&gt;テキスト&lt;/h3&gt;</th><td class="logs"><h3>テキスト</h3></td><td>見出しレベル3</td></tr>
-    <tr><th>&lt;h4&gt;テキスト&lt;/h4&gt;</th><td class="logs"><h4>テキスト</h4></td><td>見出しレベル4</td></tr>
-    <tr><th>&lt;h5&gt;テキスト&lt;/h5&gt;</th><td class="logs"><h5>テキスト</h5></td><td>見出しレベル5</td></tr>
-    <tr><th>&lt;h6&gt;テキスト&lt;/h6&gt;</th><td class="logs"><h6>テキスト</h6></td><td>見出しレベル6</td></tr>
-    <tr><th>|テキスト|テキスト|<br>|テキスト|テキスト|</th><td class="logs"><table><tr><td>テキスト<td>テキスト<tr><td>テキスト<td>テキスト</table></td><td>テーブル（表組み）</td></tr>
-    <tr><th>・テキスト<br>・テキスト</th><td><ul><li>テキスト<li>テキスト</ul></td><td>リスト</td></tr>
-    <tr><th>:アイコン名:</th><td>(任意のアイコン)</td><td>Google Fontsの<a href="https://fonts.google.com/icons" target="_blank">Material Symbols</a>のアイコンを表示する。アイコン名は全て半角小文字、スペースの代わりにアンダースコア(_)を用いる。</td></tr>
+    <tr><th>&lt;mi&gt;テキスト&lt;/mi&gt;</th><td><span class="serif">テキスト</span></td><td>명조체(대사)가 된다</td></tr>
+    <tr><th>&lt;b&gt;テキスト&lt;/b&gt;</th><td><b>テキスト</b></td><td>볼드체</td></tr>
+    <tr><th>&lt;i&gt;テキスト&lt;/i&gt;</th><td><i style="color:inherit;">テキスト</i></td><td>이탤릭체</td></tr>
+    <tr><th>&lt;s&gt;テキスト&lt;/s&gt;</th><td><s>テキスト</s></td><td>취소선 긋기</td></tr>
+    <tr><th>&lt;u&gt;テキスト&lt;/u&gt;</th><td><span class="under">テキスト</span></td><td>아래 줄 긋기</td></tr>
+    <tr><th>&lt;o&gt;テキスト&lt;/o&gt;</th><td><span class="over">テキスト</span></td><td>위 줄 긋기</td></tr>
+    <tr><th>&lt;c:#ee9900&gt;テキスト&lt;/c&gt;</th><td><span style="color:#ee9900">テキスト</span></td><td>문자의 색 변경<br>컬러코드는 임의로 바꿀 수 있다</td></tr>
+    <tr><th>&lt;big&gt;テキスト&lt;/big&gt;</th><td><span class="large">テキスト</span></td><td>문자가 커진다. （150%）<br>３종 가능.（150%→225%→337.5%）</td></tr>
+    <tr><th>&lt;small&gt;テキスト&lt;/small&gt;</th><td><span class="small">テキスト</span></td><td>문자가 작아진다.（80%）</td></tr>
+    <tr><th>&lt;hide&gt;テキスト&lt;/hide&gt;</th><td><span class="hide">テキスト</span></td><td>문자가 투명해진다. <br>(드래그로 선택상태로 하면 보인다)</td></tr>
+    <tr><th>&lt;h1&gt;テキスト&lt;/h1&gt;</th><td class="logs"><h1>テキスト</h1></td><td>헤더1</td></tr>
+    <tr><th>&lt;h2&gt;テキスト&lt;/h2&gt;</th><td class="logs"><h2>テキスト</h2></td><td>헤더2</td></tr>
+    <tr><th>&lt;h3&gt;テキスト&lt;/h3&gt;</th><td class="logs"><h3>テキスト</h3></td><td>헤더3</td></tr>
+    <tr><th>&lt;h4&gt;テキスト&lt;/h4&gt;</th><td class="logs"><h4>テキスト</h4></td><td>헤더4</td></tr>
+    <tr><th>&lt;h5&gt;テキスト&lt;/h5&gt;</th><td class="logs"><h5>テキスト</h5></td><td>헤더5</td></tr>
+    <tr><th>&lt;h6&gt;テキスト&lt;/h6&gt;</th><td class="logs"><h6>テキスト</h6></td><td>헤더6</td></tr>
+    <tr><th>|テキスト|テキスト|<br>|テキスト|テキスト|</th><td class="logs"><table><tr><td>テキスト<td>テキスト<tr><td>テキスト<td>テキスト</table></td><td>테이블 (표)</td></tr>
+    <tr><th>・テキスト<br>・テキスト</th><td><ul><li>テキスト<li>テキスト</ul></td><td>리스트</td></tr>
+    <tr><th>:아이콘이름:</th><td>(任意의アイコン)</td><td>Google Fonts의 <a href="https://fonts.google.com/icons" target="_blank">Material Symbols</a>아이콘을 표시한다. 아이콘 이름은 모두 반각 소문자, 공간 대신 언더스코어(_)を用いる. </td></tr>
   </table>
   <TMPL_IF TextReplace>
   <table class="help-text-rule-table">
-    <tr><th>記述</th><th>結果</th><th>説明</th></tr>
+    <tr><th>작성</th><th>효과</th><th>설명</th></tr>
     <TMPL_LOOP TextReplace><tr><th><TMPL_VAR BEFORE></th><td><TMPL_VAR AFTER></td><td><TMPL_VAR HELP></td></tr></TMPL_LOOP>
   </table>
   </TMPL_IF>
 </details>
 
 <details>
-  <summary>テキストコマンド</summary>
-  <p>テキストコマンドは、原則として発言の行頭に記述する必要があります。</p>
+  <summary>텍스트 명령어</summary>
+  <p>텍스트 명령은 원칙적으로 발언의 첫머리에 기술해야 합니다.</p>
   <table>
-    <tr><th>コマンド</th><th>説明</th></tr>
-    <tr><th>[タブ名]発言</th><td>「タブ名」に「発言」内容を送信する。<br>他のコマンドと併用可。このコマンドが必ず先頭。</td></tr>
-    <tr><th>名前@発言</th><td>「名前」で「発言」内容を送信する。<br>名前欄・ユニット欄にある名前のみ有効。<br>また、他のコマンドと併用可。</td></tr>
-    <tr><th>@ステータス名:文字列 </th><td>「ステータス」を「文字列」で更新する。<br>例: <code>@HP:25/25</code>、<code>@MP:なし</code></td></tr>
-    <tr><th>@ステータス名=数値   </th><td>「ステータス」の現在値を「数値」にする。<br>例: <code>@HP=-5</code></td></tr>
-    <tr><th>@ステータス名+数値   </th><td>「ステータス」の現在値に「数値」を加算する。<br>例: <code>@HP+8 リカバリィで回復。</code></td></tr>
-    <tr><th>@ステータス名-数値   </th><td>「ステータス」の現在値から「数値」を減算する。<br>例: <code>@MP-3 キュア・ウーンズを使います。</code></td></tr>
-    <tr><th>@ステータス名/数値   </th><td>「ステータス」の最大値を「数値」にする。<br>例: <code>@HP/30</code></td></tr>
-    <tr><th>@ステータス名/+数値  </th><td>「ステータス」の最大値に「数値」を加算する。<br>例: <code>@HP/+6</code> <code>@HP+15/+15 バーチャルタフネス貰いました。</code></td></tr>
-    <tr><th>@ステータス名/-数値  </th><td>「ステータス」の最大値から「数値」を減算する。<br>例: <code>@HP/-10</code></td></tr>
+    <tr><th>명령어</th><th>설명</th></tr>
+    <tr><th>[탭 이름]발언</th><td>「탭 이름」에 「발언」 내용이 전달된다.<br>다른 명령어와 병용 가능.이 명령어가 꼭 선두.</td></tr>
+    <tr><th>이름@발언</th><td>「이름」으로 「발언」 내용을 전달한다. <br>이름란, 유닛란에 있는 이름만 유효.<br>또한 다른 명령어와 병용 가능.</td></tr>
+    <tr><th>@스테이터스명:문자열 </th><td>「스테이터스」를「문자열」로 변경한다. <br>예시: <code>@HP:25/25</code>, <code>@MP:0</code></td></tr>
+    <tr><th>@스테이터스명=수치   </th><td>「스테이터스」의 현재값을「수치」로 한다. <br>예시: <code>@HP=-5</code></td></tr>
+    <tr><th>@스테이터스명+수치   </th><td>「스테이터스」의 현재값에「수치」를 가산한다. <br>예시: <code>@HP+8 리커버리로 회복.</code></td></tr>
+    <tr><th>@스테이터스명-수치   </th><td>「스테이터스」의 현재값에서「수치」를 감산한다. <br>예시: <code>@MP-3 큐어 윙즈 사용.</code></td></tr>
+    <tr><th>@스테이터스명/수치   </th><td>「스테이터스」의 최대값을「수치」로 한다. <br>예시: <code>@HP/30</code></td></tr>
+    <tr><th>@스테이터스명/+수치  </th><td>「스테이터스」의 최대값에「수치」를 가산한다. <br>예시: <code>@HP/+6</code> <code>@HP+15/+15 버추얼 터프니스 적용.</code></td></tr>
+    <tr><th>@스테이터스명/-수치  </th><td>「스테이터스」의 최대값에서「수치」를 감산한다. <br>예시: <code>@HP/-10</code></td></tr>
     <tr><td colspan="2">
-      　ステータスリモコンの各項目は「@ステータス名」が省略された状態になっています。<br>
-      　+や-を入力しなかった場合は自動的に「=」として処理します。<br>
-      「入力内容そのままで～」の設定の場合は常に「@ステータス名:」として処理します。<br>
+      　스테이터스 컨트롤러의 목표치는 「@스테이터스명」이 생략되어 있는 상태입니다.<br>
+      　+나 -를 입력하지 않은 경우는 자동적으로 「=」로 처리합니다.<br>
+      「입력 내용 그대로~」의 설정일 경우는 항상 「@스테이터스명:」으로 처리합니다.<br>
     </td></tr>
     <tr><td colspan="2">
-      　ステータスは、最大値が入力されている際、現在値がそれを超えた場合には最大値と同値に抑えられます。<br>
-      　ただし、数値の末尾に「!」を入力することで、最大値を超えた設定が可能です。<br>
-      　例：<code>@HP+15!</code>
+      　스테이터스는, 최대값이 입력되어 있을 때, 현재값이 이를 넘을 때엔 최대값이 됩니다. <br>
+      　그러나, 수치 뒷편에 「!」를 입력하는 것으로, 최대값을 넘는 설정이 가능합니다. <br>
+      　예시: <code>@HP+15!</code>
     </td></tr>
     <tr><td colspan="2">
-      　ステータスは一括で変更することができます。<br>
-      　このさい、２つ目以降のステータス名の前に@は不要です。<br>
-      例: <code>@HP:25/25 MP:10/10 防護:4</code>、<code>@HP-12 MP-12</code>
+      　스테이터스는 일괄 변경이 가능합니다. <br>
+      　이 경우, ２개째 이후의 스테이터스명에 @는 불필요합니다. <br>
+      예시: <code>@HP:25/25 MP:10/10 防護:4</code>, <code>@HP-12 MP-12</code>
     </td></tr>
-    <tr><th>@new ステータス名:文字列  </th><td>ユニット、ステータスを新規に設定します。<br>既に同名のものがある場合は上書きされます。<br>例外的に、名前欄・ユニット欄に存在しない名前でも指定できます。<br>例: <code>大蜥蜴@new 頭部HP:30/30 胴体HP:40/40</code>、<code>ゴブリンの群れ@new ＡHP:16/16 ＢHP:16/16 ＣHP:16/16 防護:2</code></td></tr>
-    <tr><th>@add ステータス名:文字列  </th><td>ステータスを追加で設定します。<br>既に同名のものがある場合は上書きされます。<br>例: <code>@add 使い魔MP:7/7</code>、</td></tr>
-    <tr><th>@delete     </th><td>発言者と同名のユニットを削除する。</td></tr>
-    <tr><th>@check          </th><td>ユニット一覧の自分の名前にチェック（✔）を入れる。<br>例: <code>@check 行動終了</code></td></tr>
-    <tr><th>@uncheck         </th><td>ユニット一覧の自分の名前のチェック（✔）を外す。<br>例: <code>@uncheck まだやることあった</code></td></tr>
-    <tr><th>/ready       </th><td>「レディチェックを開始しました」の文言とともに、ユニットの✔を全て外す。</td></tr>
-    <tr><th>/round+数値  </th><td>ラウンド数を「数値」進める。<br>ユニットの✔は全て外れる。</td></tr>
-    <tr><th>/round-数値  </th><td>ラウンド数を「数値」戻す。<br>ユニットの✔は全て外れる。</td></tr>
-    <tr><th>/round=数値  </th><td>ラウンド数を「数値」にする。<br>ユニットの✔は全て外れる。</td></tr>
-    <tr><th>/roundreset  </th><td>ラウンド数を「0」にする。<br>ユニットの✔は全て外れる。</td></tr>
-    <tr><th>/topic 文字列</th><td>トピックの内容を「文字列」で更新する。</td></tr>
-    <tr><th>/memo 文字列 </th><td>「文字列」の内容のメモを追加する。</td></tr>
-    <tr><th>/bg 文字列 URL</th><td>「URL」の画像を背景に設定する。<br>「文字列」がタイトルに設定される。</td></tr>
-    <tr><th>/bgreset</th><td>背景画像を初期状態に戻す。</td></tr>
-    <tr><th>/bgm 文字列 数値 URL</th><td>「URL」の音声をBGMに設定する。<br>「文字列」をタイトル、「数値」%の音量で設定される（省略時は100）。</td></tr>
-    <tr><th>/bgmreset</th><td>BGMを無音状態に戻す。</td></tr>
-    <tr><th>/insert URL</th><td>「URL」の画像を挿入</td></tr>
+    <tr><th>@new 스테이터스명:문자열  </th><td>캐릭터, 스테이터스의 새로운 값을 설정합니다. <br>이미 같은 이름이 있는 경우엔 덮어 씌웁니다. <br>예외적으로, 이름란・캐릭터란에 존재하지 않는 이름으로도 적용할 수 있습니다. <br>예시: <code>大蜥蜴@new 머리HP:30/30 몸통HP:40/40</code>, <code>고블린무리@new ＡHP:16/16 ＢHP:16/16 ＣHP:16/16 방호:2</code></td></tr>
+    <tr><th>@add 스테이터스명:문자열  </th><td>스테이터스를 추가로 설정합니다. <br>이미 같은 이름이 있는 경우엔 덮어 씌웁니다. <br>예시: <code>@add 使い魔MP:7/7</code>, </td></tr>
+    <tr><th>@delete     </th><td>발언자와 같은 이름의캐릭터의 캐릭터를 삭제합니다. </td></tr>
+    <tr><th>@check          </th><td>캐릭터 일람의 자신의 이름에 체크（✔）합니다. <br>예시: <code>@check 행동완료</code></td></tr>
+    <tr><th>@uncheck         </th><td>캐릭터 일람의 자신의 이름의 체크（✔）를 뺍니다. <br>예시: <code>@uncheck 더 할 게 있었다</code></td></tr>
+    <tr><th>/ready       </th><td>「레디 체크를 개시합니다.」의 문장과 함께, 캐릭터의 ✔를 전부 뺍니다.</td></tr>
+    <tr><th>/round+수치  </th><td>라운드 수를 「수치」 진행시킵니다. <br>캐릭터의 ✔는 전부 사라집니다.</td></tr>
+    <tr><th>/round-수치  </th><td>라운드 수를 「수치」 돌립니다.<br>캐릭터의 ✔는 전부 사라집니다.</td></tr>
+    <tr><th>/round=수치  </th><td>라운드 수를 「수치」로 합니다.<br>캐릭터의 ✔는 전부 사라집니다.</td></tr>
+    <tr><th>/roundreset  </th><td>라운드 수를 「0」으로 합니다. <br>캐릭터의 ✔는 전부 사라집니다.</td></tr>
+    <tr><th>/topic 문자열</th><td>토픽의 내용을 「문자열」로 갱신합니다.</td></tr>
+    <tr><th>/memo 문자열 </th><td>「문자열」의 내용의 메모를 추가합니다. </td></tr>
+    <tr><th>/bg 문자열 URL</th><td>「URL」의 영상을 배경에 설정합니다. <br>「문자열」이 타이틀로 설정됩니다. </td></tr>
+    <tr><th>/bgreset</th><td>배경영상을 초기상태로 되돌립니다.</td></tr>
+    <tr><th>/bgm 문자열 수치 URL</th><td>「URL」의 음악을 BGM으로 설정합니다. <br>「문자열」은 타이틀, 「수치」%의 음량으로 설정됩니다（비울 시 100）. </td></tr>
+    <tr><th>/bgmreset</th><td>BGM을 무음상태로 되돌립니다.</td></tr>
+    <tr><th>/insert URL</th><td>「URL」의 영상을 삽입</td></tr>
   </table>
 </details>
 
 <details>
-  <summary>ダイスコード（ダイスコマンド）</summary>
+  <summary>다이스 코드（다이스 명령어）</summary>
   <p>
-    　ダイスコードは、原則として発言の先頭、ないし末尾に記述する必要があります。<br>
-    　通常の発言と同時に記述する場合、スペースか改行で区切ってください。<br>
-    　半角・全角は問わず反映されます。<br>
+    　다이스 코드는 원칙적으로 발언의 앞부분, 혹은 뒷부분에 작성될 필요가 있습니다.<br>
+    　평범한 발언과 동시에 작성할 경우, 스페이스나 엔터로 구분해 주세요. <br>
   </p>
 
   <details>
-    <summary>通常ダイス</summary>
-    <p><span style="color:#ee7777;">ダイスの数</span><b>D</b><span style="color:#eebb77;">面の数</span><span style="color:#77ee77;">+修正値</span><span style="color:#eebb77;">@C値</span><span style="color:#77bbee;">目標値</span><span style="color:#cc77ee;">:繰返し回数</span></p>
+    <summary>일반 다이스</summary>
+    <p><span style="color:#ee7777;">다이스의 수</span><b>D</b><span style="color:#eebb77;">면의수</span><span style="color:#77ee77;">+수정값</span><span style="color:#eebb77;">@크리티컬</span><span style="color:#77bbee;">목표값</span><span style="color:#cc77ee;">:반복 횟수</span></p>
     <p>
-      　<span style="color:#77ee77;">+修正値</span>・<span style="color:#eebb77;">@C値</span>・<span style="color:#cc77ee;">:繰返し回数</span>、<span style="color:#77bbee;">目標値</span>は省略できます。<br>
-      　修正値の末尾に「<span style="color:#77ee77;">//</span>」をつけると半減した結果になります。<br>
-      　半減した上でさらに修正がある場合、「<span style="color:#77ee77;">//</span>」の後ろにさらに付け足します（「<span style="color:#77ee77;">//</span>」など）。<br>
-      　また、半減と同様に「<span style="color:#77ee77;">**</span>」と*を2つ重ねることで倍化した結果になります。<br>
-    </p>
-    <p>
-      　<span style="color:#77bbee;">目標値</span>は以下のように記述してください。<br>
+      　<span style="color:#77bbee;">목표값</span>은 아래와 같이 작성해 주세요.<br>
     </p>
     <table class="help-rate-table">
-      <tr><th><b style="color:#77bbee;">&gt;</b><i>Num</i>  <td>Num より大きい
-      <tr><th><b style="color:#77bbee;">&gt;=</b><i>Num</i> <td>Num 以上
-      <tr><th><b style="color:#77bbee;">&lt;</b><i>Num</i>  <td>Num より小さい
-      <tr><th><b style="color:#77bbee;">&lt;=</b><i>Num</i> <td>Num 以下
-      <tr><th><b style="color:#77bbee;">==</b><i>Num</i>    <td>Num と等しい
+      <tr><th><b style="color:#77bbee;">&gt;</b><i>Num</i>  <td>Num 초과
+      <tr><th><b style="color:#77bbee;">&gt;=</b><i>Num</i> <td>Num 이상
+      <tr><th><b style="color:#77bbee;">&lt;</b><i>Num</i>  <td>Num 미만
+      <tr><th><b style="color:#77bbee;">&lt;=</b><i>Num</i> <td>Num 이하
+      <tr><th><b style="color:#77bbee;">==</b><i>Num</i>    <td>Num 동일
     </table>
     <p>
-      例1：「6面ダイスを1つ振る」<br>
+      예1：「6면다이스를 1개 굴림」<br>
       　<span style="color:#ee7777;">1</span><b>D</b><span style="color:#eebb77;">6</span>
     </p>
     <p>
-      例2：「命中力が12、魔法でさらに+1されつつ、命中力判定」<br>
+      예2：「명중력이 12, 마법으로 +1된 채로, 명중력 판정」<br>
       　<span style="color:#ee7777;">2</span><b>D</b><span style="color:#eebb77;">6</span><span style="color:#77ee77;">+12+1</span>
     </p>
-    <p>
-      例3：「ワイバーンのブレスによる攻撃。2d+10だが抵抗されたので半減」<br>
-      　<span style="color:#ee7777;">2</span><b>D</b><span style="color:#eebb77;">6</span><span style="color:#77ee77;">+10//</span>
-    </p>
-    <p>
-      例4：「すべての［部位：腕］が健在なヘカトンケイレスの《武器乱舞》のダメージ」<br>
-      　<span style="color:#ee7777;">2</span><b>D</b><span style="color:#eebb77;">6</span><span style="color:#77ee77;">**6+5</span><br>
-    </p>
-    <p>
-      例5：「超越判定」<br>
-      　<span style="color:#ee7777;">2</span><b>D</b><span style="color:#eebb77;">6</span><span style="color:#77ee77;">+22</span><span style="color:#eebb77;">@10</span><br>
-    </p>
   </details>
 
   <details>
-    <summary>任意項目ランダム選択</summary>
-    <p>　BCDiceにおける choice[] に相当しますが、一度に複数回選ぶことが出来ます。</p>
-    <h5>重複あり</h5>
-    <p><span style="color:#ee7777;">選ぶ回数</span><b>$</b><span style="color:#eebb77;">項目1</span>,<span style="color:#eebb77;">項目2</span>,<span style="color:#eebb77;">項目3</span>...</p>
-    <h5>重複なし</h5>
-    <p><span style="color:#ee7777;">選ぶ個数</span><b>@</b><span style="color:#eebb77;">項目1</span>,<span style="color:#eebb77;">項目2</span>,<span style="color:#eebb77;">項目3</span>...</p>
+    <summary>임의항목 랜덤선택</summary>
+    <p>　BCDice에 있어서의 choice[] 에 해당합니다만, 한 번에 복수개 선택할 수 있습니다.</p>
+    <h5>중복있음</h5>
+    <p><span style="color:#ee7777;">선택 횟수</span><b>$</b><span style="color:#eebb77;">항목1</span>,<span style="color:#eebb77;">항목2</span>,<span style="color:#eebb77;">항목3</span>...</p>
+    <h5>중복없음</h5>
+    <p><span style="color:#ee7777;">선택 횟수</span><b>@</b><span style="color:#eebb77;">항목1</span>,<span style="color:#eebb77;">항목2</span>,<span style="color:#eebb77;">항목3</span>...</p>
   </details>
   <details>
-    <summary>ランダム表</summary>
-    <p>　設定済みのランダム表を振ります。<br>「xDy」を振るタイプのランダム表は、重複なしにできません（重複ありと同じ結果になります）。</p>
-    <h5>重複あり</h5>
-    <p><span style="color:#ee7777;">選ぶ回数</span><b>$</b><span style="color:#eebb77;">表の名前</span></p>
-    <h5>重複なし</h5>
-    <p><span style="color:#ee7777;">選ぶ個数</span><b>@</b><span style="color:#eebb77;">表の名前</span></p>
+    <summary>랜덤 표</summary>
+    <p>　설정된 랜덤 표를 굴립니다. <br>「xDy」를 굴리는 타입 의랜덤 표는, 중복없음으로 할 수 없습니다（중복있음과 같은 효과가 됩니다）. </p>
+    <h5>중복있음</h5>
+    <p><span style="color:#ee7777;">선택 횟수</span><b>$</b><span style="color:#eebb77;">표의 이름</span></p>
+    <h5>중복없음</h5>
+    <p><span style="color:#ee7777;">선택 횟수</span><b>@</b><span style="color:#eebb77;">표의 이름</span></p>
     <p>
-      　選ぶ回数（個数）の指定は省略できます。<br>
-      　また、回数の指定が無い時に自動的に設定される回数と、指定できる最大の回数は、ランダム表により異なります。それぞれ、下記の表を参照してください。
+      　선택 횟수（갯수）의 지정은 생략할 수 있습니다. <br>
+      　또한, 횟수의 지정이 없을 땐 자동적으로 설정된 횟수로, 지정가능한 최대 횟수는 랜덤 표에 따라 달라집니다. 각기 하기의 표를 참조해 주세요. 
     </p>
-    <table>
-      <tr><th>表の名前</th><th>省略</th><th>最大</th><th>説明</th></tr>
-      <TMPL_LOOP RandomTable><tr><th><TMPL_VAR COMMAND></th><td class="right" style="white-space:nowrap"><TMPL_VAR DEF>回</td><td class="right" style="white-space:nowrap"><TMPL_VAR MAX>回</td><td><TMPL_VAR HELP></td></tr></TMPL_LOOP>
-    </table>
-    <p>　こちらの表は、山札機能（下記）においても使用します。</p>
-  </details>
-  <details>
-    <summary>山札機能</summary>
-    <p>
-      　ランダム表（上記）のリストを使った山札を作り、そこからドローします。<br>
-      　xDyを振るタイプのランダム表は、山札にセットできません。
-    </p>
-    <h5>山札セット</h5>
-    <p>set<b>#</b><span style="color:#77ee77;">作成する山札の名前（任意）</span>=<spa style="color:#eebb77;">表の名前</span></p>
-    <h5>山札からドロー</h5>
-    <p><span style="color:#ee7777;">引く枚数</span><b>＃</b><span style="color:#77ee77;">山札名前</span></p>
-  </details>
-
-  <TMPL_IF helpOnSW2>
-  <details>
-    <summary>威力表（ソード・ワールド）</summary>
-    <p>
-      <b>R</b><span style="color:#ee7777;">威力</span><span style="color:#77ee77;">+修正値</span><span style="color:#eebb77;">@C値</span><span style="color:#ee77bb;">!必殺</span><span style="color:#bb77ee;">$出目</span><span style="color:#77aaee;">k首切</span><span style="color:#cc77ee;">:繰返し回数</span><br>
-      <b>R</b><span style="color:#ee7777;">威力</span><span style="color:#eebb77;">[C値]</span><span style="color:#77ee77;">+修正値</span><span style="color:#ee77bb;">!必殺</span><span style="color:#bb77ee;">$出目</span><span style="color:#77aaee;">k首切</span><span style="color:#cc77ee;">:繰返し回数</span>
-    </p>
-    <p>
-      <span style="color:#77ee77;">+修正値</span>・<span style="color:#eebb77;">@C値</span>・<span style="color:#ee77bb;">!必殺</span>・<span style="color:#bb77ee;">$出目</span>・<span style="color:#77aaee;">k首切り</span>・<span style="color:#cc77ee;">:繰返し回数</span>は省略できます。<br>
-      　修正値の末尾に「<span style="color:#77ee77;">//</span>」をつけると半減した結果になります。半減した上でさらに修正がある場合、「<span style="color:#77ee77;">//</span>」の後ろにさらに付け足します（「<span style="color:#77ee77;">//+1</span>」など）。<br>
-      　!必殺、k首切は、効果による出目ないし威力の上昇値を記入します。<br>
-      　$出目は、特定効果による出目の固定値や修正値（クリティカルレイ等）を記入します。<br>
-      　詳しくは下記を参照してください。
-    </p>
-    <p>
-      　威力表のダイスコードの記述に用いる記号等は、以下のものも使えるようになっています。
-    </p>
-    <table class="help-rate-table">
-      <tr>
-        <th>種類</th>
-        <th>記述</th>
-        <th>解説</th>
-      </tr>
-      <tr>
-        <th>威力</th>
-        <th> <b>r</b><i>Num</i> <br> <b>k</b><i>Num</i> <br> <b>威力</b><i>Num</i> </th>
-        <td>Num=威力。<br>必ず先頭に記述。<br>また、Numを()で囲うことで、()内での加減算が可。</td>
-      </tr>
-      <tr>
-        <th>C値</th>
-        <th> <b>@</b><i>Num</i> <br> <b>[</b><i>Num</i><b>]</b> <br> <b>C値</b><i>Num</i> </th>
-        <td>Num=C値。<br>[]で囲う形式の場合、必ず威力の直後に記述。加減算可。</td>
-      </tr>
-      <tr>
-        <th>必殺効果</th>
-        <th> <b>#</b><i>Num</i> <br> <b>b</b><i>Num</i> <br> <b>!</b><i>Num</i> <br> <b>必殺</b><i>Num</i> </th>
-        <td>Num=出目上昇量。<br>Numを省略すると1として扱う。</td>
-      </tr>
-      <tr>
-        <th>出目固定<br>（合計値）</th>
-        <th> <b>$</b><i>Num</i> <br> <b>出目</b><i>Num</i> </th>
-        <td>Num=出目（2～12）。<br>出目をNumとして威力算出する。<br>クリティカル時、最初の1回のみで効果は消える。</td>
-      </tr>
-      <tr>
-        <th>出目固定<br>（片方）</th>
-        <th> <b>$n</b><i>Num</i> <br> <b>出目n</b><i>Num</i> </th>
-        <td>Num=出目（1～6）。<br>出目の片方をNumとして威力算出する。<br>クリティカル時にも継続する。</td>
-      </tr>
-      <tr>
-        <th>出目修正</th>
-        <th> <b>$+</b><i>Num</i> <br> <b>出目+</b><i>Num</i> </th>
-        <td>Num=出目修正値。<br>出目にNumを加える（クリレイ効果）。<br>クリティカル時、最初の1回のみで効果は消える。</td>
-      </tr>
-      <tr>
-        <th>首切効果</th>
-        <th> <b>r</b><i>Num</i> <br> <b>c</b><i>Num</i> <br> <b>k</b><i>Num</i> <br> <b>首切</b><i>Num</i> </th>
-        <td>Num=威力上昇量。<br>2.0の首切り刀なら10、2.5なら5。<br>Numを省略すると5として扱う</td>
-      </tr>
-      <tr>
-        <th>アビスカース<br>「難しい」</th>
-        <th> <b>&lt;</b><i>Num</i> <br> <b>難</b><i>Num</i></th>
-        <td>Num=出目。<br>指定出目以下の威力算出結果を0にする。</td>
-      </tr>
-    </table>
-    <p>
-      　また、「<b>R</b><span style="color:#ee7777;">ウルフバイト</span><span style="color:#77ee77;">+修正値</span>」「<b>R</b><span style="color:#ee7777;">WB</span><span style="color:#77ee77;">+修正値</span>」のように、威力の部分に魔法名（あるいはその略称）を記述することで森羅魔法のダメージを算出できます。<br>
-    </p>
-    <table class="help-rate-table">
-      <tr>
-        <th>ウルフバイト</th>
-        <td>WB</td>
-      </tr>
-      <tr>
-        <th>ソーンバッシュ</th>
-        <td>SB</td>
-      </tr>
-      <tr>
-        <th>コングスマッシュ</th>
-        <td>KS</td>
-      </tr>
-      <tr>
-        <th>ボアラッシュ</th>
-        <td>BR</td>
-      </tr>
-      <tr>
-        <th>マルサーヴラプレス</th>
-        <td>MP</td>
-      </tr>
-      <tr>
-        <th>ルナアタック</th>
-        <td>LA</td>
-      </tr>
-      <tr>
-        <th>ダブルストンプ</th>
-        <td>DS</td>
-      </tr>
-    </table>
-  </details>
-
-  <details>
-    <summary>成長ダイス（ソード・ワールド）</summary>
-    <p><b style="color:#ee7777;">GR</b><br><b style="color:#ee7777;">成長ダイス</b></p>
-    <p>
-      　器用度,敏捷度,筋力,生命力,知力,精神力の中からランダムに2つ表示する。<br>
-      　数字を追加すると（「GR1」など）、その数ぶんだけ表示する。
-    </p>
-  </details>
-  </TMPL_IF>
 
   <TMPL_IF helpOnDX3>
   <details>
-    <summary>ダブルクロス行為判定</summary>
+    <summary>더블크로스 행위 판정</summary>
     <p>
-      <span style="color:#ee7777;">判定値</span><b>R</b><span style="color:#eebb77;">C値</span><span style="color:#77ee77;">+修正値</span><br>
-      <span style="color:#ee7777;">判定値</span><b>R</b><span style="color:#77ee77;">+修正値</span><span style="color:#eebb77;">@C値</span><br>
-      <span style="color:#ee7777;">判定値</span><b>DX</b><span style="color:#eebb77;">C値</span><span style="color:#77ee77;">+修正値</span><br>
-      <span style="color:#ee7777;">判定値</span><b>DX</b><span style="color:#77ee77;">+修正値</span><span style="color:#eebb77;">@C値</span><br>
+      <span style="color:#ee7777;">판정치</span><b>R</b><span style="color:#eebb77;">크리티컬</span><span style="color:#77ee77;">+수정값</span><br>
+      <span style="color:#ee7777;">판정치</span><b>R</b><span style="color:#77ee77;">+수정값</span><span style="color:#eebb77;">@크리티컬</span><br>
+      <span style="color:#ee7777;">판정치</span><b>DX</b><span style="color:#eebb77;">크리티컬</span><span style="color:#77ee77;">+수정값</span><br>
+      <span style="color:#ee7777;">판정치</span><b>DX</b><span style="color:#77ee77;">+수정값</span><span style="color:#eebb77;">@크리티컬</span><br>
     </p>
     <p>
-      　<span style="color:#77ee77;">+修正値</span>・<span style="color:#eebb77;">@C値</span>は省略できます。<br>
-      　判定値部分は加減算が可能です。
+      　<span style="color:#77ee77;">+수정값</span>・<span style="color:#eebb77;">@크리티컬</span>은 생략할 수 있습니다. <br>
+      　판정치 부분은 가산/감산이 가능합니다. 
     </p>
     <p>
-      例1：「【肉体】3、〈回避〉技能1レベル、C値10の回避判定」<br>
-      　<span style="color:#ee7777;">3</span><b>R</b><span style="color:#eebb77;">10</span><span style="color:#77ee77;">+1</span>　または　<span style="color:#ee7777;">3</span><b>R</b><span style="color:#77ee77;">+1</span><span style="color:#eebb77;">@10</span><br>
-      例2：「【知覚】4、〈射撃〉技能5レベル、C値10。エフェクトでダイスが+2、C値が-2。侵蝕ボーナスでダイス+1」<br>
-      　<span style="color:#ee7777;">4+2+1</span><b>R</b><span style="color:#eebb77;">(10-2)</span><span style="color:#77ee77;">+5</span>　または　<span style="color:#ee7777;">4+2+1</span><b>R</b><span style="color:#77ee77;">+5</span><span style="color:#eebb77;">@10-2</span>
+      예1：「【육체】3, 〈회피〉기능 1레벨, 크리티컬10의 회피 판정」<br>
+      　<span style="color:#ee7777;">3</span><b>R</b><span style="color:#eebb77;">10</span><span style="color:#77ee77;">+1</span>　또는　<span style="color:#ee7777;">3</span><b>R</b><span style="color:#77ee77;">+1</span><span style="color:#eebb77;">@10</span><br>
+      예2：「【지각】4, 〈사격〉기능 5레벨, 크리티컬 10. 이펙트로 다이스가 +2, 크리티컬이 -2. 침식보너스로 다이스+1」<br>
+      　<span style="color:#ee7777;">4+2+1</span><b>R</b><span style="color:#eebb77;">(10-2)</span><span style="color:#77ee77;">+5</span>　또는　<span style="color:#ee7777;">4+2+1</span><b>R</b><span style="color:#77ee77;">+5</span><span style="color:#eebb77;">@10-2</span>
     </p>
   </details>
 
   <details>
-    <summary>シーン登場・衝動判定（ダブルクロス）</summary>
+    <summary>씬 등장・충동판정（더블크로스）</summary>
     <p>
       <b style="color:#ee7777;">ER</b><br>
       <b style="color:#ee7777;">ER</b>n<br>
     </p>
     <p>
-      「nD10」侵蝕率を上昇させる。（nを省略時は1）
+      「nD10」침식률을 상승시킨다. （n 생략 시 1）
     </p>
   </details>
 
   <details>
-    <summary>バックトラック（ダブルクロス）</summary>
+    <summary>백트랙（더블크로스 ）</summary>
     <p>
       <b style="color:#ee7777;">-ER</b><br>
       <b style="color:#ee7777;">-ER</b>n<br>
     </p>
     <p>
-      「nD10」侵蝕率を低下させる。（nを省略時は1）
+      「nD10」침식률을 저하시킨다. （n 생략 시 1）
     </p>
   </details>
 
   <details>
-    <summary>リザレクト（ダブルクロス）</summary>
+    <summary>리저렉트（더블크로스 ）</summary>
     <p>
       <b style="color:#ee7777;">RE</b><br>
       <b style="color:#ee7777;">RE</b>n<br>
       <b style="color:#ee7777;">+RE</b>n<br>
     </p>
     <p>
-      　nレベルのリザレクトを使用する。<br>
-      （「nD10」HPを回復し、回復したぶんだけ侵蝕率を上昇させる）<br>
-      （nを省略時は1）<br>
-      　先頭に「+」をつけない場合は<b>HP0から回復したものとして</b>処理します。<br>
-      　先頭に「+」をつけた場合は、現在HPに加算処理します。<br>
+      　n레벨의 리저렉트를 사용한다. <br>
+      （「nD10」HP를 회복하고, 동일한 만큼 침식률을 상승시킨다）<br>
+      （n 생략 시 1）<br>
+      　앞에 「+」를 붙이지 않는 경우<b>HP0부터 회복한 것으로</b>처리한다 <br>
+      　앞에 「+」를 붙인 경우, 현재 HP에 가산처리한다 <br>
     </p>
   </details>
 
   <details>
-    <summary>感情表（ダブルクロス）</summary>
+    <summary>감정표（더블크로스 ）</summary>
     <p>
       <b style="color:#ee7777;">ET</b><br>
       <b style="color:#ee7777;">ETP</b><br>
       <b style="color:#ee7777;">ETN</b>
     </p>
     <p>
-      　感情表を振る。<br>
-      　ETPはポジティブ、ETNはネガティブの表のみを振る。<br>
+      　감정표를 굴린다. <br>
+      　ETP는 포지티브, ETN는 네거티브 표만 굴린다. <br>
     </p>
   </details>
-  <details>
-    <summary>ハプニングチャート（ダブルクロス）</summary>
-    <p>
-      <b style="color:#ee7777;">HC</b><br>
-    </p>
-    <p>
-      　<a href="http://www.fear.co.jp/dbx3rd/download/dc3_fs_ver1.pdf" target="_blank">ハプニングチャート</a>を振る。
-    </p>
-  </details>
-  </TMPL_IF>
-
-  <TMPL_IF helpOnBCDice>
-  <details><summary>BCDice</summary><p id="help-bcdice-info"></p></details>
-  </TMPL_IF>
-</details>
 
 <details>
-  <summary>四則演算</summary>
-  <p>
-    <span style="color:#ee7777;">計算式</span><b>=</b><br>
-  </p>
-  <p>
-    　単純な計算式の後に＝を記述することで、計算結果を表示します。<br>
-    　計算式には数字(0～9)、四則演算記号(+-*/)、べき乗記号(^または**)、丸括弧が使用できます。
-  </p>
-</details>
-
-<details>
-  <summary>各種設定逆引き</summary>
-  <p>各種設定（コンフィグ）項目の逆引きリストです。</p>
+  <summary>각종설정역순</summary>
+  <p>각종설정（Configuration）항목의 역순 리스트입니다. </p>
   <table class="help-config-table">
     <tr>
-      <th>音量
-      <td><button onclick="boxOpen('config-user','config-sound');">個人設定 ⇒ サウンド設定</button> ⇒ 音量<br>
-        <span class="small">着信SEやBGMなどの、各音量を変更できます。</span>
+      <th>음량
+      <td><button onclick="boxOpen('config-user','config-sound');">개인설정 ⇒ 사운드설정</button> ⇒ 음량<br>
+        <span class="small">착신SEやBGMなど의, 각음량を변경できます. </span>
     <tr>
-      <th>着信音／着信SE
-      <td><button onclick="boxOpen('config-user','config-sound');">個人設定 ⇒ サウンド設定</button> ⇒ 着信SE<br><span class="small">各着信SEを変更できます。</span>
+      <th>착신음／착신SE
+      <td><button onclick="boxOpen('config-user','config-sound');">개인설정 ⇒ 사운드설정</button> ⇒ 착신SE<br><span class="small">각착신SEを변경できます. </span>
     <tr>
-      <th>通知／名前強調／ワード強調／強調ワード
-      <td><button onclick="boxOpen('config-user','config-mark');">個人設定 ⇒ 通知設定</button>
+      <th>알림／이름강조／워드 강조／강조 워드
+      <td><button onclick="boxOpen('config-user','config-mark');">개인설정 ⇒ 알림설정</button>
     <tr>
-      <th>入力フォーム／ダイス欄／チャットパレット
-      <td><button onclick="boxOpen('config-user','config-palette');">個人設定 ⇒ 入力フォーム・チャットパレット設定</button>
+      <th>입력／다이스란／챗팔레트
+      <td><button onclick="boxOpen('config-user','config-palette');">개인설정 ⇒ 입력・챗팔레트설정</button>
     <tr>
-      <th>フォント／文字
-      <td><button onclick="boxOpen('config-user','config-font');">個人設定 ⇒ ログフォント設定</button><br>
-        <span class="small">チャットログのフォント種類、及び明るさ・縁取りの有無を変更できます。</span>
+      <th>폰트／문자
+      <td><button onclick="boxOpen('config-user','config-font');">개인설정 ⇒ 로그폰트설정</button><br>
+        <span class="small">채팅로그의폰트種類, 及び明るさ・縁取り의有無を변경できます. </span>
     <tr>
-      <th>UIレイアウト／タブバー
-      <td><button onclick="boxOpen('config-user','config-layout');">個人設定 ⇒ ＵＩ配置</button><br>
-        <span class="small">各UIの配置パターンを選択できます。</span>
+      <th>UI레이아웃／タブバー
+      <td><button onclick="boxOpen('config-user','config-layout');">개인설정 ⇒ ＵＩ위치</button><br>
+        <span class="small">각UI의위치패턴を선택できます. </span>
   </table>
 </details>

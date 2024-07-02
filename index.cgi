@@ -351,10 +351,10 @@ sub errorHtml {
   <article id="contents">
     <h2><span class="material-symbols-outlined">warning</span>エラー</h2>
     <p style="padding: 1em;">$_[0]</p>
-    <p><a href="./">ゲームルーム一覧に戻る</a></p>
+    <p><a href="./">게임방 목록으로 돌아가기</a></p>
   </article>
   <footer>
-    ゆとチャadv. ver.$::ver - <a href="https://yutorize.2-d.jp" target="_blank">ゆとらいず工房</a>
+    ゆとチャadv. KR ver.$::ver - <a href="https://yutorize.2-d.jp" target="_blank">ゆとらいず工房</a>
   </footer>
 </div>
 </body>

@@ -36,18 +36,18 @@
     </div>
     <div class="box" id="menubar">
     <ul>
-      <li id="menu-button-logs"><a href="?mode=logs&id=<TMPL_VAR roomId>&type=lite#all" target="_blank">ログ</a></li>
-      <li id="menu-button-back"><a onclick="boxOpen('bg-set');">背景</a></li>
+      <li id="menu-button-logs"><a href="?mode=logs&id=<TMPL_VAR roomId>&type=lite#all" target="_blank">로그</a></li>
+      <li id="menu-button-back"><a onclick="boxOpen('bg-set');">배경</a></li>
       <li id="menu-button-bgms"><a onclick="boxOpen('bgm-set');bgmPreviewEnd();">BGM</a></li>
-      <li id="menu-button-user"><a onclick="boxOpen('config-user');">個人設定</a></li>
-      <li id="menu-button-room"><a onclick="boxOpen('config-room');">ルーム設定</a></li>
-      <li id="menu-button-help"><a onclick="boxOpen('help-window');">ヘルプ</a></li>
-      <li id="menu-button-exit"><a onclick="boxOpen('exit-form');">退室</a></li>
+      <li id="menu-button-user"><a onclick="boxOpen('config-user');">개인설정</a></li>
+      <li id="menu-button-room"><a onclick="boxOpen('config-room');">룸설정</a></li>
+      <li id="menu-button-help"><a onclick="boxOpen('help-window');">헬프</a></li>
+      <li id="menu-button-exit"><a onclick="boxOpen('exit-form');">퇴실</a></li>
     </ul>
     <ul>
       <li id="menu-mute-button"><a class="mute-button" onclick="muteToggle();"></a></li>
-      <li>背景濃度 <span id="option-bg-opacity-view">100</span> %<input id="option-bg-opacity" type="range" min="0" max="100" step="1" value="100"></li>
-      <li>背景不透過 <span id="option-box-opacity-view">70</span> %<input id="option-box-opacity" type="range" min="0.0" max="1.0" step="0.01" value="0.7"></li>
+      <li>배경농도 <span id="option-bg-opacity-view">100</span> %<input id="option-bg-opacity" type="range" min="0" max="100" step="1" value="100"></li>
+      <li>배경불투명 <span id="option-box-opacity-view">70</span> %<input id="option-box-opacity" type="range" min="0.0" max="1.0" step="0.01" value="0.7"></li>
     </ul>
     </div>
     
@@ -66,9 +66,9 @@
     <div class="box" id="main-form">
       <div class="input-form">
         <div class="namelist-area">
-          <span id="npc-del-button" class="button" onclick="npcDel()" title="一番下の名前を削除します">－</span>
-          <span id="npc-edit-button" class="button" onclick="npcOpen()" title="名前一覧を一括編集します">編集</span>
-          <span id="npc-add-button" class="button" onclick="npcAdd()" title="空の名前を追加します">＋</span>
+          <span id="npc-del-button" class="button" onclick="npcDel()" title="맨 아래의 이름을 삭제합니다">－</span>
+          <span id="npc-edit-button" class="button" onclick="npcOpen()" title="이름 목록을 일괄 편집합니다">편집</span>
+          <span id="npc-add-button" class="button" onclick="npcAdd()" title="빈 이름을 추가합니다">＋</span>
           <select id="form-name" class="form-name bold chara-name" size="4">
             <option value="0" selected></option>
           </select>
@@ -76,70 +76,70 @@
         <div>
           <div class="comm-config-area">
             <div class="name-area">
-              <input type="text" id="main-name1" class="main-name bold chara-name" title="現在の名前" placeholder="名前が空欄です" readonly>
+              <input type="text" id="main-name1" class="main-name bold chara-name" title="현재 이름" placeholder="이름이 공란입니다" readonly>
               <span id="form-color-pickr" class="color-pickr" data-pickr="form-color"></span>
-              <input type="text" id="form-color" class="" list="color-list" value="#FFFFFF" title="名前色">
+              <input type="text" id="form-color" class="" list="color-list" value="#FFFFFF" title="이름 색">
             </div>
             <div class="address-area">
-              <select id="form-address" title="発言送信先"><option value="">全員</option></select>
-              <label for="secret-openlater" title="チェックを入れると、過去ログになった時には公開されます。"><input type="checkbox" id="secret-openlater"><b>後で公開</b></label>
+              <select id="form-address" title="발언송신지"><option value="">전원</option></select>
+              <label for="secret-openlater" title="チェックを入れると、과거로그에 なった時에 は공개されます。"><input type="checkbox" id="secret-openlater"><b>추후공개</b></label>
             </div>
           </div>
           <div class="comm-area">
-          <textarea class="form-comm autosize" id="form-comm-main" placeholder="Shift+Enterで改行　Ctrl+↑↓で名前切替　Ctrl+←→でタブ切替"></textarea>
-          <button onclick="formSubmit('form-comm-main');">送信</button>
+          <textarea class="form-comm autosize" id="form-comm-main" placeholder="Shift+Enter로 엔터　Ctrl+↑↓로 이름 변경　Ctrl+←→로 탭 변경"></textarea>
+          <button onclick="formSubmit('form-comm-main');">송신</button>
           </div>
           <div class="decoration-buttons">
             <span data-target="form-comm-main" class="button help" onclick="boxOpen('help-window','help-text-rule')"></span>
             <span data-target="form-comm-main" class="button start insert-ruby"></span>
             <span data-target="form-comm-main" class="button insert-em"></span>
             <span data-target="form-comm-main" class="button insert-serif"></span>
-            <span data-target="form-comm-main" class="button insert-bold"    title="太字"></span>
-            <span data-target="form-comm-main" class="button insert-oblique" title="斜体"></span>
-            <span data-target="form-comm-main" class="button insert-under"   title="下線"></span>
-            <span data-target="form-comm-main" class="button insert-strike"  title="打消線"></span>
-            <span data-target="form-comm-main" class="button insert-big"     title="大きい字"></span>
-            <span data-target="form-comm-main" class="button insert-small"   title="小さい字"></span>
-            <span data-target="form-comm-main" class="button insert-color"   title="色変え"></span>
-            <span data-target="form-comm-main" class="button insert-hide"    title="透明な字"></span>
-            <span data-target="form-comm-main" class="button insert-horizon" title="水平線"></span>
-            <span data-target="form-comm-main" class="button insert-left"    title="左揃え"></span>
-            <span data-target="form-comm-main" class="button insert-center"  title="中央揃え"></span>
-            <span data-target="form-comm-main" class="button insert-right"   title="右揃え"></span>
+            <span data-target="form-comm-main" class="button insert-bold"    title="볼드"></span>
+            <span data-target="form-comm-main" class="button insert-oblique" title="이탤릭"></span>
+            <span data-target="form-comm-main" class="button insert-under"   title="밑줄"></span>
+            <span data-target="form-comm-main" class="button insert-strike"  title="소거선"></span>
+            <span data-target="form-comm-main" class="button insert-big"     title="문자크기+"></span>
+            <span data-target="form-comm-main" class="button insert-small"   title="문자크기-"></span>
+            <span data-target="form-comm-main" class="button insert-color"   title="색변경"></span>
+            <span data-target="form-comm-main" class="button insert-hide"    title="투명문자"></span>
+            <span data-target="form-comm-main" class="button insert-horizon" title="수평선"></span>
+            <span data-target="form-comm-main" class="button insert-left"    title="좌측정렬"></span>
+            <span data-target="form-comm-main" class="button insert-center"  title="중앙정렬"></span>
+            <span data-target="form-comm-main" class="button insert-right"   title="우측정렬"></span>
             
-            <span class="button end insert-headline" title="見出し">
+            <span class="button end insert-headline" title="헤더">
               <select data-target="form-comm-main">
-                <option value="">見出し
-                <option value="1">レベル1
-                <option value="2">レベル2
-                <option value="3">レベル3
-                <option value="4">レベル4
-                <option value="5">レベル5
-                <option value="6">レベル6
+                <option value="">헤더
+                <option value="1">1
+                <option value="2">2
+                <option value="3">3
+                <option value="4">4
+                <option value="5">5
+                <option value="6">6
                 </select>
             </span>
             
-            <span class="button start end insert-image" title="挿絵" onclick="boxOpen('image-insert');"></span>
+            <span class="button start end insert-image" title="삽화" onclick="boxOpen('image-insert');"></span>
           </div>
           
           <div class="check-buttons">
-            <button onclick="unitCheckSubmit()"><span class="small">行動済</span></button>
+            <button onclick="unitCheckSubmit()"><span class="small">행동완료</span></button>
           </div>
           <div class="form-dice" id="form-dice-0">
-            <span class="del edit button" onclick="diceDel(0);" title="ダイス欄を削除">－</span>
-            <span class="add edit button" onclick="diceAdd(0);" title="ダイス欄を追加">＋</span>
-            <span class="shrink edit button" onclick="diceScale(0,'shrink');" title="ダイス欄を狭める">⇐</span>
-            <span class="expand edit button" onclick="diceScale(0,'expand');" title="ダイス欄を拡げる">⇒</span>
+            <span class="del edit button" onclick="diceDel(0);" title="다이스란 삭제">－</span>
+            <span class="add edit button" onclick="diceAdd(0);" title="다이스란 추가">＋</span>
+            <span class="shrink edit button" onclick="diceScale(0,'shrink');" title="다이스란 작게">⇐</span>
+            <span class="expand edit button" onclick="diceScale(0,'expand');" title="다이스란 크게">⇒</span>
           </div>
         </div>
         <div class="form-dice" id="form-dice-1">
-          <span class="del edit button" onclick="diceDel(1);" title="ダイス欄を削除">－</span>
-          <span class="add edit button" onclick="diceAdd(1);" title="ダイス欄を追加">＋</span>
-          <span class="shrink edit button" onclick="diceScale(1,'shrink');" title="ダイス欄を狭める">⇐</span>
-          <span class="expand edit button" onclick="diceScale(1,'expand');" title="ダイス欄を拡げる">⇒</span>
+          <span class="del edit button" onclick="diceDel(1);" title="다이스란 삭제">－</span>
+          <span class="add edit button" onclick="diceAdd(1);" title="다이스란 추가">＋</span>
+          <span class="shrink edit button" onclick="diceScale(1,'shrink');" title="다이스란 작게">⇐</span>
+          <span class="expand edit button" onclick="diceScale(1,'expand');" title="다이스란 크게">⇒</span>
         </div>
       </div>
-      <span class="help button" onclick="boxOpen('help-window','help-sub-form');" title="サブ発言欄のヘルプ"></span>
+      <span class="help button" onclick="boxOpen('help-window','help-sub-form');" title="서브 발언란 헬프"></span>
     </div>
     <!-- / FORM-AREA -->
     
@@ -157,8 +157,8 @@
       <div class="box" id="status" data-num="0">
         <div id="status-body"></div>
         <span class="add button" onclick="sheetSelect('default');sheetOpen();">+</span>
-        <span class="shrink edit button" onclick="statusScale('shrink');" title="狭める">⇐</span>
-        <span class="expand edit button" onclick="statusScale('expand');" title="拡げる">⇒</span>
+        <span class="shrink edit button" onclick="statusScale('shrink');" title="좁히기">⇐</span>
+        <span class="expand edit button" onclick="statusScale('expand');" title="늘리기">⇒</span>
       </div>
       <div class="box memo" id="memo" data-num="0">
         <ul id="memo-list" class="bold"></ul>
@@ -169,12 +169,12 @@
     <!-- FOOTER -->
     <div class="box" id="footer">
       <div>
-        <dl><dt>入室</dt><dd id="member-num" class="link" style="white-space: nowrap;" onclick="boxOpen('member-list')">－</dd></dl>
-        <dl><dt>ルーム</dt><dd><TMPL_VAR title></dd></dl>
-        <dl><dt>システム</dt><dd><TMPL_VAR gameSystemName></dd></dl>
+        <dl><dt>입실</dt><dd id="member-num" class="link" style="white-space: nowrap;" onclick="boxOpen('member-list')">－</dd></dl>
+        <dl><dt>룸</dt><dd><TMPL_VAR title></dd></dl>
+        <dl><dt>룰</dt><dd><TMPL_VAR gameSystemName></dd></dl>
       </div>
       <div>
-        <dl><dt>背景</dt><dd id="bg-title">－</dd></dl>
+        <dl><dt>배경</dt><dd id="bg-title">－</dd></dl>
         <dl><dt>BGM</dt><dd id="bgm-title">－</dd></dl>
       </div>
     </div>
@@ -183,33 +183,33 @@
     <!-- SHEET-->
     <div id="sheet-area">
     <div id="sheet-unit-default" class="box sheet">
-      <h2>ユニット追加</h2>
+      <h2>캐릭터 추가</h2>
       <div class="sheet-body-default">
         <dl>
-          <dt>名前      </dt><dd><input id="new-unit-name-value"  type="text"></dd>
-          <dt>名前色    </dt><dd><span class="color-pickr" data-pickr="new-unit-color-value"></span><input id="new-unit-color-value" type="text" class="selectcolor-unit" list="color-list" value="#ffffff"></dd>
-          <dt>参照URL</dt><dd><input id="new-unit-url-value" type="url" placeholder="キャラシなどのURL"></dd>
-          <dt>ステータス</dt><dd><textarea class="autosize" id="new-unit-stt-value"><TMPL_VAR newUnitSttDefault></textarea></dd>
+          <dt>이름      </dt><dd><input id="new-unit-name-value"  type="text"></dd>
+          <dt>이름색    </dt><dd><span class="color-pickr" data-pickr="new-unit-color-value"></span><input id="new-unit-color-value" type="text" class="selectcolor-unit" list="color-list" value="#ffffff"></dd>
+          <dt>참조URL   </dt><dd><input id="new-unit-url-value" type="url" placeholder="캐릭터 시트 URL"></dd>
+          <dt>스테이터스 </dt><dd><textarea class="autosize" id="new-unit-stt-value"><TMPL_VAR newUnitSttDefault></textarea></dd>
         </dl>
         <ul>
-          <li><label><input type="checkbox" id="new-unit-urlload"><b>URLからステータスを自動入力</b></label><br><span>（※対応しているサイトのみ）</span></li>
-          <li><label><input type="checkbox" id="new-unit-addname"><b>名前欄にも追加する</b></label></li>
+          <li><label><input type="checkbox" id="new-unit-urlload"><b>URL로부터 스테이터스를 자동입력</b></label><br><span>（※반응하는 사이트 한정）</span></li>
+          <li><label><input type="checkbox" id="new-unit-addname"><b>이름란에도 추가한다</b></label></li>
         </ul>
-        <button onclick="newUnitSubmit();">作成</button>
+        <button onclick="newUnitSubmit();">작성</button>
       </div>
       <span class="close button" onclick="sheetClose();">×</span>
     </div>
     <div id="sheet-unit-memo" class="box sheet" data-memo-mode="view">
-      <h2>共有メモ</h2>
+      <h2>공유메모</h2>
       <div class="sheet-memo-body">
         <ul class="sheet-memo-menu">
           <li class="button" onclick="memoShowModal();"><span class="material-symbols-outlined">open_with</span></li>
-          <li class="button" onclick="memoModeChange('view');">閲覧</li>
-          <li class="button" onclick="memoModeChange('edit');">編集</li>
+          <li class="button" onclick="memoModeChange('view');">보기</li>
+          <li class="button" onclick="memoModeChange('edit');">편집</li>
         </ul>
         <div class="sheet-memo-outline"><textarea id="sheet-memo-value" class="autosize"></textarea></div>
         <div id="memo-view" class="logs"></div>
-        <button onclick="memoSubmit();">追加／更新</button>
+        <button onclick="memoSubmit();">추가／갱신</button>
       </div>
       <span class="close button" onclick="sheetClose();">×</span>
     </div>
@@ -221,61 +221,61 @@
   
   <!-- FLOAT-BOXES -->
   <div class="float-box" id="image-insert">
-    <h2>挿絵（画像挿入）</h2>
+    <h2>삽화（영상삽입）</h2>
     <div>
       <div class="image-preview-area"><img id="image-insert-preview" style="max-width:100%;max-height:200px;"></div>
       <p>
         <input type="url" id="image-insert-url" oninput="imgPreview();" placeholder="http://..." data-comm-pre="/insert " style="width:100%">
       </p>
       <p class="center">
-        <button onclick="formSubmit('image-insert-url');boxClose('image-insert');document.getElementById('image-insert-preview').src='';">送信</button>
+        <button onclick="formSubmit('image-insert-url');boxClose('image-insert');document.getElementById('image-insert-preview').src='';">송신</button>
       </p>
     </div>
     <span class="close button" onclick="boxClose('image-insert');">×</span>
   </div>
   
   <div class="float-box" id="rewrite-name-form">
-    <h2>発言名変更</h2>
+    <h2>발언명변경</h2>
     <div class="comm-area">
       <select class="form-name bold" id="rewrite-name"></select>
-      <button onclick="rewriteNameSubmit();boxClose('rewrite-name-form');">送信</button>
+      <button onclick="rewriteNameSubmit();boxClose('rewrite-name-form');">송신</button>
     </div>
     <span class="close button" onclick="boxClose('rewrite-name-form');">×</span>
   </div>
   
   <div class="float-box" id="rewrite-form">
-    <h2>発言編集</h2>
+    <h2>발언편집</h2>
     <div class="comm-area">
       <textarea class="autosize" id="rewrite-comm" data-comm-pre=""></textarea>
-      <button onclick="formSubmit('rewrite-comm');boxClose('rewrite-form');">送信</button>
+      <button onclick="formSubmit('rewrite-comm');boxClose('rewrite-form');">송신</button>
     </div>
     
     <div class="decoration-buttons">
       <span data-target="rewrite-comm" class="button start insert-ruby"></span>
       <span data-target="rewrite-comm" class="button insert-em"></span>
       <span data-target="rewrite-comm" class="button insert-serif"></span>
-      <span data-target="rewrite-comm" class="button insert-bold"      title="太字"></span>
-      <span data-target="rewrite-comm" class="button insert-oblique"   title="斜体"></span>
-      <span data-target="rewrite-comm" class="button insert-under"     title="下線"></span>
-      <span data-target="rewrite-comm" class="button insert-strike"    title="打消線"></span>
-      <span data-target="rewrite-comm" class="button insert-big"       title="大きい字"></span>
-      <span data-target="rewrite-comm" class="button insert-small"     title="小さい字"></span>
-      <span data-target="rewrite-comm" class="button insert-color"     title="色変え"></span>
-      <span data-target="rewrite-comm" class="button insert-hide"      title="透明な字"></span>
-      <span data-target="rewrite-comm" class="button insert-horizon"   title="水平線"></span>
-      <span data-target="rewrite-comm" class="button insert-left"      title="左揃え"></span>
-      <span data-target="rewrite-comm" class="button insert-center"    title="中央揃え"></span>
-      <span data-target="rewrite-comm" class="button insert-right"     title="右揃え"></span>
+      <span data-target="rewrite-comm" class="button insert-bold"      title="볼드"></span>
+      <span data-target="rewrite-comm" class="button insert-oblique"   title="이탤릭"></span>
+      <span data-target="rewrite-comm" class="button insert-under"     title="밑줄"></span>
+      <span data-target="rewrite-comm" class="button insert-strike"    title="소거선"></span>
+      <span data-target="rewrite-comm" class="button insert-big"       title="문자크기+"></span>
+      <span data-target="rewrite-comm" class="button insert-small"     title="문자크기-"></span>
+      <span data-target="rewrite-comm" class="button insert-color"     title="색변경"></span>
+      <span data-target="rewrite-comm" class="button insert-hide"      title="투명문자"></span>
+      <span data-target="rewrite-comm" class="button insert-horizon"   title="수평선"></span>
+      <span data-target="rewrite-comm" class="button insert-left"      title="좌측정렬"></span>
+      <span data-target="rewrite-comm" class="button insert-center"    title="중앙정렬"></span>
+      <span data-target="rewrite-comm" class="button insert-right"     title="우측정렬"></span>
       
-      <span class="button end insert-headline" title="見出し">
+      <span class="button end insert-headline" title="헤더">
         <select data-target="rewrite-comm">
-          <option value="">見出し
-          <option value="1">レベル1
-          <option value="2">レベル2
-          <option value="3">レベル3
-          <option value="4">レベル4
-          <option value="5">レベル5
-          <option value="6">レベル6
+          <option value="">헤더
+          <option value="1">1
+          <option value="2">2
+          <option value="3">3
+          <option value="4">4
+          <option value="5">5
+          <option value="6">6
           </select>
       </span>
     </div>
@@ -283,36 +283,36 @@
   </div>
   
   <div class="float-box" id="edit-topic">
-    <h2>トピック編集</h2>
+    <h2>토픽편집</h2>
     <div class="comm-area">
       <textarea class="bold autosize" id="edit-topic-value" data-comm-pre="/topic "></textarea>
-      <button onclick="formSubmit('edit-topic-value');boxClose('edit-topic');">送信</button>
+      <button onclick="formSubmit('edit-topic-value');boxClose('edit-topic');">송신</button>
     </div>
     <span class="close button" onclick="boxClose('edit-topic');">×</span>
   </div>
   
   <div class="float-box" id="edit-npc">
-    <h2>名前欄一括編集</h2>
+    <h2>이름란일괄편집</h2>
     <div class="comm-area">
       <textarea class="autosize" id="edit-npc-value"></textarea>
-      <button onclick="npcSave('edit-npc-value');boxClose('edit-npc');">決定</button>
+      <button onclick="npcSave('edit-npc-value');boxClose('edit-npc');">결정</button>
     </div>
-    ※改行で区切ります。<br>
-    ※色は名前末尾に6桁のカラーコードで指定。<br>
-    　省略すると、ランダムな色を割り当てます。<br>
-    ※入室名は変更できません。<br>
+    ※엔터로 구분합니다.<br>
+    ※색은 이름 뒷편에 6자의 컬러코드로 지정.<br>
+    　생략 시, 랜덤한 색으로 나누어집니다.<br>
+    ※입실명은 변경할 수 없습니다.<br>
     <span class="close button" onclick="boxClose('edit-npc');">×</span>
   </div>
   
   <div class="float-box bg-set-box" id="bg-set">
-    <h2>背景画像変更</h2>
+    <h2>배경영상변경</h2>
     <div class="preview-section">
       <div class="image-preview-area"><img id="bg-set-preview" style="max-width:100%;max-height:200px;"></div>
       <p class="properties-area">
         <label>
           <span class="label">Summary</span>
           <span class="control">
-            <input type="text" id="bg-set-title" placeholder="タイトル・アーティスト名・権利表記など">
+            <input type="text" id="bg-set-title" placeholder="타이틀・アーティスト명・権利表記など">
           </span>
         </label>
         <label>
@@ -322,16 +322,16 @@
           </span>
         </label>
       <p class="center button-area">
-        <button onclick="bgSubmit();">変更する</button>
+        <button onclick="bgSubmit();">변경한다</button>
       </p>
     </div>
     <div class="list-section">
       <input type="radio" name="bg-set-tracks-check" id="bg-set-tracks-check-preset" checked>
       <input type="radio" name="bg-set-tracks-check" id="bg-set-tracks-check-history">
       <h3>
-        <label for="bg-set-tracks-check-preset"><span class="material-symbols-outlined">photo_library</span>プリセット</label>
+        <label for="bg-set-tracks-check-preset"><span class="material-symbols-outlined">photo_library</span>프리셋</label>
         ／
-        <label for="bg-set-tracks-check-history"><span class="material-symbols-outlined">history</span>履歴</label>
+        <label for="bg-set-tracks-check-history"><span class="material-symbols-outlined">history</span>이력</label>
       </h3>
       <ul class="bg-list <TMPL_IF bgThumOn>thumnail-on</TMPL_IF>" id="bg-preset"><TMPL_LOOP bgPreset>
         <li onclick="bgInputSet('<TMPL_VAR URL>', '<TMPL_VAR TITLE>')"><TMPL_VAR VIEW></li></TMPL_LOOP>
@@ -340,35 +340,35 @@
     </div>
     <div class="other-section">
       <TMPL_IF srcURL><div class="restriction-area">
-        <h3><span class="material-symbols-outlined">check_circle</span>使用可能URL</h3>
-        <p>下記のドメインから始まるURL以外は使用できません。</p>
+        <h3><span class="material-symbols-outlined">check_circle</span>사용가능URL</h3>
+        <p>하기의 도메인으로 시작하는 URL 이외에는 사용할 수 없습니다. </p>
         <ul><TMPL_LOOP srcURL><li><TMPL_VAR URL></li></TMPL_LOOP></ul>
       </div></TMPL_IF>
       <div class="remover-area">
-        <h3><span class="material-symbols-outlined">delete</span>背景画像削除</h3>
-        <p>現在の背景を削除し、初期状態に戻します。</p>
-        <button onclick="commSend('/bgreset',0,nameList[0]['name']);">削除する</button>
+        <h3><span class="material-symbols-outlined">delete</span>배경영상삭제</h3>
+        <p>현재 배경을 소거하고 초기상태로 되돌립니다.</p>
+        <button onclick="commSend('/bgreset',0,nameList[0]['name']);">삭제한다</button>
       </div>
     </div>
     <span class="close button" onclick="boxClose('bg-set');">×</span>
   </div>
   
   <div class="float-box" id="bgm-confirm" style="top:30vh;left:0;right:0;max-width:100%;">
-    <h2>BGM再生確認</h2>
+    <h2>BGM재생확인</h2>
     <div id="bgm-youtube-area"><div id="bgm-yt-player"></div></div>
     <p style="padding:2em 0 1em;">
-      BGMが設定されています<br>
+      BGMが설정されています<br>
       ［<span id="bgm-title-view"></span>］<br>
-      （音量:<span id="bgm-volume-view"></span>％）
+      （음량:<span id="bgm-volume-view"></span>％）
     </p>
     <p style="padding:0 0 2em;text-align:center;">
-      <button onclick="bgmPlay();boxClose('bgm-confirm');" style="width:5.5em;">再生</button>
-      <button onclick="bgmPause();boxClose('bgm-confirm');" style="width:5.5em;">停止</button>
+      <button onclick="bgmPlay();boxClose('bgm-confirm');" style="width:5.5em;">재생</button>
+      <button onclick="bgmPause();boxClose('bgm-confirm');" style="width:5.5em;">정지</button>
     </p>
     <span class="close button" onclick="boxClose('bgm-confirm');">×</span>
   </div>
   <div class="float-box bg-set-box" id="bgm-set">
-    <h2>BGM変更</h2>
+    <h2>BGM변경</h2>
     <div class="preview-section">
       <div id="bgm-set-preview-area">
         <audio id="bgm-set-preview" loop></audio>
@@ -384,7 +384,7 @@
         <label>
           <span class="label">Summary</span>
           <span class="control">
-            <input type="text" id="bgm-set-title" placeholder="タイトル・アーティスト名・権利表記など">
+            <input type="text" id="bgm-set-title" placeholder="타이틀・アーティスト명・権利表記など">
           </span>
         </label>
         <label>
@@ -402,16 +402,16 @@
         </label>
       </p>
       <p class="center button-area">
-        <button onclick="bgmSubmit();">変更する</button>
+        <button onclick="bgmSubmit();">변경한다</button>
       </p>
     </div>
     <div class="list-section">
       <input type="radio" name="bgm-set-tracks-check" id="bgm-set-tracks-check-preset" checked>
       <input type="radio" name="bgm-set-tracks-check" id="bgm-set-tracks-check-history">
       <h3>
-        <label for="bgm-set-tracks-check-preset"><span class="material-symbols-outlined">library_music</span>プリセット</label>
+        <label for="bgm-set-tracks-check-preset"><span class="material-symbols-outlined">library_music</span>프리셋</label>
         ／
-        <label for="bgm-set-tracks-check-history"><span class="material-symbols-outlined">history</span>履歴</label>
+        <label for="bgm-set-tracks-check-history"><span class="material-symbols-outlined">history</span>이력</label>
       </h3>
       <div class="bgm-preset-filter filter-area">
         <label class="filter">
@@ -423,7 +423,7 @@
       <div class="tracks-area">
         <ul class="asset-list bgm-list" id="bgm-preset" data-preset-source="<TMPL_VAR bgmPreset>">
         </ul>
-        <p class="notice" id="notice_on_present_not_found">該当するプリセットなし</p>
+        <p class="notice" id="notice_on_present_not_found">해당 프리셋 없음</p>
       </div>
       <div class="history-area">
         <ul class="bg-list" id="bgm-history"></ul>
@@ -431,13 +431,13 @@
     </div>
     <div class="other-section">
       <TMPL_IF srcURL><div class="restriction-area">
-        <h4><span class="material-symbols-outlined">check_circle</span>使用可能URL</h4>
-        <p>下記のドメインから始まるURL以外は使用できません。</p>
+        <h4><span class="material-symbols-outlined">check_circle</span>사용가능URL</h4>
+        <p>하기의 도메인으로 시작하는 URL 이외에는 사용할 수 없습니다. </p>
         <ul><TMPL_LOOP srcURL><li><TMPL_VAR URL></li></TMPL_LOOP></ul></div></TMPL_IF>
       <div class="remover-area">
-        <h3><span class="material-symbols-outlined">delete</span>BGM削除</h3>
-        <p>現在のBGMを削除し、無音状態に戻します。</p>
-        <button onclick="commSend('/bgmreset',0,nameList[0]['name']);">削除する</button>
+        <h3><span class="material-symbols-outlined">delete</span>BGM삭제</h3>
+        <p>現在의BGMを삭제し、無音状態에 戻します。</p>
+        <button onclick="commSend('/bgmreset',0,nameList[0]['name']);">삭제한다</button>
       </div>
     </div>
     <span class="close button" onclick="boxClose('bgm-set');bgmPreviewEnd();">×</span>
@@ -445,22 +445,22 @@
   </div>
   
   <div class="float-box" id="config-user">
-    <h2>ユーザー個人設定</h2>
-    <p>　ゲームルームを跨いで、あなただけに適用される設定です。</p>
+    <h2>유저개인설정</h2>
+    <p>　게임룸 외에, 당신에게만 적용되는 설정입니다. </p>
     <details id="config-sound">
-      <summary><span class="material-symbols-outlined">volume_up</span>サウンド設定</summary>
-      <h4>■音量</h4>
+      <summary><span class="material-symbols-outlined">volume_up</span>사운드설정</summary>
+      <h4>■음량</h4>
       <table>
-        <tr><th>マスターボリューム</th><td><input type="range" id="volume-master" data-type="master" min="0" max="100" step="1" value="80"></td><td id="volume-master-view">80%</td></tr>
+        <tr><th>마스터볼륨</th><td><input type="range" id="volume-master" data-type="master" min="0" max="100" step="1" value="80"></td><td id="volume-master-view">80%</td></tr>
         <tr><th>ＢＧＭ            </th><td><input type="range" id="volume-bgm"    data-type="bgm"    min="0" max="100" step="1" value="80"></td><td id="volume-bgm-view"   >80%</td></tr>
-        <tr><th>チャット着信      </th><td><input type="range" id="volume-chat"   data-type="chat"   min="0" max="100" step="1" value="80"></td><td id="volume-chat-view"  >80%</td></tr>
-        <tr><th>強調ワード着信    </th><td><input type="range" id="volume-mark"   data-type="mark"   min="0" max="100" step="1" value="80"></td><td id="volume-mark-view"  >80%</td></tr>
-        <tr><th>レディチェック開始</th><td><input type="range" id="volume-ready"  data-type="ready"  min="0" max="100" step="1" value="80"></td><td id="volume-ready-view" >80%</td></tr>
+        <tr><th>채팅착신      </th><td><input type="range" id="volume-chat"   data-type="chat"   min="0" max="100" step="1" value="80"></td><td id="volume-chat-view"  >80%</td></tr>
+        <tr><th>강조단어착신    </th><td><input type="range" id="volume-mark"   data-type="mark"   min="0" max="100" step="1" value="80"></td><td id="volume-mark-view"  >80%</td></tr>
+        <tr><th>레디 체크 개시</th><td><input type="range" id="volume-ready"  data-type="ready"  min="0" max="100" step="1" value="80"></td><td id="volume-ready-view" >80%</td></tr>
       </table>
       <p>
-        強調ワード音量・レディチェック音量は0にするとチャット着信音に統一されます。<br>
+        강조단어음량・레디 체크음량은 0으로 해도 채팅착신음으로 통일됩니다. <br>
       </p>
-      <h4>■着信SE</h4>
+      <h4>■착신SE</h4>
       <table>
         <tbody id="option-se-tabs"></tbody>
         <script>
@@ -468,12 +468,12 @@
         </script>
         <tbody>
           <tr>
-            <th>強調ワード着信</th>
+            <th>강조단어착신</th>
             <td><select id="option-se-mark" oninput="seTypeChange(this,'mark')">
               <TMPL_LOOP chatSEList><option value="<TMPL_VAR URL>"><TMPL_VAR NAME></option></TMPL_LOOP>
             </select></td></tr>
           <tr>
-            <th>レディチェック開始</th>
+            <th>레디 체크개시</th>
             <td><select id="option-se-ready" oninput="seTypeChange(this,'ready')">
               <TMPL_LOOP readySEList><option value="<TMPL_VAR URL>"><TMPL_VAR NAME></option></TMPL_LOOP>
             </select></td>
@@ -482,101 +482,101 @@
       </table>
     </details>
     <details id="config-mark">
-      <summary><span class="material-symbols-outlined">notification_important</span>通知設定</summary>
+      <summary><span class="material-symbols-outlined">notification_important</span>알림설정</summary>
       <p>
-        入室名を強調する：<input id="mark-name-check" class="toggle-button" type="checkbox" onchange="markNameToggle();"><label for="mark-name-check"></label><br>
-        強調ワード：<br><textarea id="mark-list-value" class="autosize" rows="2" onchange="markListChange();"></textarea><br>
-        　指定したワードが発言された際、強調表示します。<br>
-        　改行で区切って複数設定することができます。<br>
+        입실명を강조한다：<input id="mark-name-check" class="toggle-button" type="checkbox" onchange="markNameToggle();"><label for="mark-name-check"></label><br>
+        강조단어：<br><textarea id="mark-list-value" class="autosize" rows="2" onchange="markListChange();"></textarea><br>
+        　지정した단어が발언された際、강조표시します。<br>
+        　엔터で구분해복수설정한다ことができます。<br>
       </p>
       <p>
-        除外ワード：<br><textarea id="except-list-value" class="autosize" rows="2" onchange="exceptListChange();"></textarea><br>
-        　強調ワードが発言されても、同発言に除外ワードが含まれる場合は強調されません。<br>
-        　改行で区切って複数設定することができます。<br>
+        예외단어：<br><textarea id="except-list-value" class="autosize" rows="2" onchange="exceptListChange();"></textarea><br>
+        　강조단어が발언されても、同발언에 예외단어が含まれる경우は강조されません。<br>
+        　엔터で구분해복수설정한다ことができます。<br>
       </p>
     </details>
     <details id="config-palette">
-      <summary><span class="material-symbols-outlined">comment</span>発言欄・チャットパレット設定</summary>
-      <h3>■チャットパレット挙動</h3>
+      <summary><span class="material-symbols-outlined">comment</span>발언란・채팅팔레트설정</summary>
+      <h3>■채팅팔레트기능</h3>
       <p>
-        クリック時の転記先：
+        클릭 시의 작성 장소：
         <select id="option-palette-destinate">
-          <option value="fall">パレット直下の発言欄
-          <option value="main">メイン発言欄
+          <option value="fall">팔레트 아래의 발언란
+          <option value="main">메인 발언란
         </select>
       </p>
-      <h3>■サブ発言欄Enter・⏎ボタン挙動</h3>
+      <h3>■서브 발언란 nter・⏎ボタン기능</h3>
       <table>
         <tr>
           <th><span class="comm-icon full"></span></th>
           <td>
             <select id="option-subform-full-behavior">
-              <option value="plain">そのまま送信
-              <option value="copy" >メイン発言欄に転記
-              <option value="add"  >メイン発言の入力も同時に送信
+              <option value="plain">그대로 송신
+              <option value="copy" >메인 발언란에 작성
+              <option value="add"  >메인 발언의 입력도 동시에 송신
             </select>
           </td>
-          <td>欄に全文残す</td>
+          <td>란에 전문 남긴다</td>
         </tr>
         <tr>
           <th><span class="comm-icon dice"></span></th>
           <td>
             <select id="option-subform-dice-behavior">
-              <option value="plain">そのまま送信
-              <option value="copy" >メイン発言欄に転記
-              <option value="add"  >メイン発言の入力も同時に送信
+              <option value="plain">그대로 송신
+              <option value="copy" >메인 발언란에 작성
+              <option value="add"  >메인 발언의 입력도 동시에 송신
             </select>
           </td>
-          <td>欄にコマンドを残す</td>
+          <td>란에 명령어を남긴다</td>
         </tr>
         <tr>
           <th><span class="comm-icon name"></span></th>
           <td>
             <select id="option-subform-name-behavior">
-              <option value="plain">そのまま送信
-              <option value="copy" >メイン発言欄に転記
-              <option value="add"  >メイン発言の入力も同時に送信
+              <option value="plain">그대로 송신
+              <option value="copy" >메인 발언란에 작성
+              <option value="add"  >메인 발언의 입력도 동시에 송신
             </select>
           </td>
-          <td>欄に発言名を残す</td>
+          <td>란에 발언명を남긴다</td>
         </tr>
         <tr>
           <th><span class="comm-icon off"></span></th>
           <td>
             <select id="option-subform-off-behavior">
-              <option value="plain">そのまま送信
-              <option value="copy" >メイン発言欄に転記
-              <option value="add"  >メイン発言の入力も同時に送信
+              <option value="plain">그대로 송신
+              <option value="copy" >메인 발언란에 작성
+              <option value="add"  >메인 발언의 입력도 동시에 송신
             </select>
           </td>
-          <td>欄を空にする</td>
+          <td>란을 비운다</td>
         </tr>
         <tr>
           <th><span class="comm-icon memo"></span></th>
-          <td>送信しない</td>
-          <td>メモ欄</td>
+          <td>송신하지않음</td>
+          <td>메모란</td>
         </tr>
       </table>
       </p>
     </details>
     <details id="config-font">
-      <summary><span class="material-symbols-outlined">text_fields</span>ログフォント設定</summary>
-      <p>文字の明るさ： <input id="option-font-lightness" type="range" min="50" max="100" step="1" value="100"> <span id="option-font-lightness-view">100</span>%</p>
-      <p>文字の縁取り： <input id="option-font-shadow" class="toggle-button" type="checkbox" checked><label for="option-font-shadow"></label></p>
+      <summary><span class="material-symbols-outlined">text_fields</span>로그폰트설정</summary>
+      <p>文字의明るさ： <input id="option-font-lightness" type="range" min="50" max="100" step="1" value="100"> <span id="option-font-lightness-view">100</span>%</p>
+      <p>文字의縁取り： <input id="option-font-shadow" class="toggle-button" type="checkbox" checked><label for="option-font-shadow"></label></p>
       <div class="font-sample logs-font">
         <TMPL_IF helpOnSW2>
-        <span class="dash">――</span>『ソード・ワールド２．５』は、３本の剣が生み出した世界《ラクシア》を仲間と共に冒険するゲームだ。“冒険者”となり、自分たちだけの<ruby>物語<rt>セッション</rt></ruby>を体験しよう！
+        <span class="dash">――</span>『ソード・ワールド２．５』は、３本의剣が生み出した世界《ラクシア》を仲間と共에 冒険한다게임だ。“冒険者”となり、自分たちだけ의<ruby>物語<rt>セッション</rt></ruby>を体験しよう！
         <TMPL_ELSE>
         <TMPL_IF helpOnDX3>
-          昨日と同じ今日。今日と同じ明日。世界は繰り返し時を刻み、変わらないように見えた。だが、世界はすでに変貌していた。<br>
-          “ダブルクロス”<span class="dash">――</span>それは「裏切り」を意味する言葉。
+          昨日と同じ今日。今日と同じ明日。世界は繰り返し時を刻み、変わらないよう에 見えた。だが、世界はすで에 変貌していた。<br>
+          “더블크로스”<span class="dash">――</span>それは「裏切り」を意味한다言葉。
         <TMPL_ELSE>
-          あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+          あ의イーハトーヴォ의すきとおった風、夏でも底에 冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外의ぎらぎらひかる草의波。
         </TMPL_IF>
         </TMPL_IF>
       </div>
       <p style="margin-top:0;">
-        日本語フォント：
+        日本語폰트：
         <select id="option-font-family-jp">
         <TMPL_INCLUDE NAME="option-fonts.html">
         </select>
@@ -585,36 +585,36 @@
         『ノームやノーム、足をとれ！　固めて縛って釘付けろ！』
       </div>
       <p style="margin-top:0;">
-        明朝体フォント：
+        明朝体폰트：
         <select id="option-font-family-min">
         <TMPL_INCLUDE NAME="option-fonts-min.html">
         </select>
       </p>
     </details>
     <details id="config-layout">
-      <summary><span class="material-symbols-outlined">tab</span>ＵＩ配置</summary>
+      <summary><span class="material-symbols-outlined">tab</span>ＵＩ위치</summary>
       <p>
-        ステータス・メモ一覧の配置：
+        스테이터스・메모일람의위치：
         <select id="window-layout-sidebar" onchange="layoutChange()">
         <optgroup label="縦並び">
-          <option value="right-top"   >→┃ 右側／↑上寄せ</option>
-          <option value="right-bottom">→┃ 右側／↓下寄せ</option>
-          <option value="left-top"    >┃← 左側／↑上寄せ</option>
-          <option value="left-bottom" >┃← 左側／↓下寄せ</option>
+          <option value="right-top"   >→┃ 상측／↑上寄せ</option>
+          <option value="right-bottom">→┃ 상측／↓下寄せ</option>
+          <option value="left-top"    >┃← 좌측／↑上寄せ</option>
+          <option value="left-bottom" >┃← 좌측／↓下寄せ</option>
         </optgroup>
         <optgroup label="横並び">
           <option value="high"   >━↑ 上段</option>
-          <option value="shallow">━↓ 中下段（発言エリアの上）</option>
-          <option value="deep"   >━↓ 最下段（発言エリアの下）</option>
+          <option value="shallow">━↓ 中下段（발언에리어의上）</option>
+          <option value="deep"   >━↓ 最下段（발언에리어의下）</option>
         </optgroup>
         </select><br>
-        キャラシート（リモコン・パレット操作エリア）の配置：
+        캐릭터시트（컨트롤러・팔레트조작에리어）의위치：
         <select id="window-layout-sheet" onchange="layoutChange()">
-          <option value="R">→ 右端</option>
-          <option value="L">← 左端</option>
+          <option value="R">→ 상단</option>
+          <option value="L">← 좌단</option>
         </select><br>
         <br>
-        チャットタブバーの位置：
+        채팅탭 바의위치：
         <select id="layout-tab-bar" onchange="layoutTabBarChange()">
           <option value="top">上</option>
           <option value="bottom" selected>下</option>
@@ -625,89 +625,89 @@
   </div>
   
   <div class="float-box" id="config-room">
-    <h2>ゲームルーム設定</h2>
+    <h2>게임룸설정</h2>
     <p>
-      　このゲームルームにのみ適用される設定です。<br>
-      　変更すると、入室中の全ユーザーに変更が適用されます。<br>
+      　こ의게임룸에 의み적용される설정です。<br>
+      　변경한다と、입실中의전유저에 변경が적용されます。<br>
     </p>
     <details>
-      <summary><span class="material-symbols-outlined">tab</span>タブの追加／リネーム／変更</summary>
-      <h3>■追加</h3>
-      <p><input type="text" id="tab-add-name" placeholder="追加するタブの名前"> <button class="button" onclick="tabAddSubmit()">追加</button></p>
-      <h3>■リネーム</h3>
-      <p><select id="tab-rename-list"></select> <input type="text" id="tab-rename-name" placeholder="変更後の名前"> <button class="button" onclick="tabRenameSubmit()">変更</button></p>
-      <h3>■削除</h3>
-      <p><select id="tab-delete-list"></select> <button class="button" onclick="tabDeleteSubmit()">削除</button></p>
+      <summary><span class="material-symbols-outlined">tab</span>탭의추가／리네임／변경</summary>
+      <h3>■추가</h3>
+      <p><input type="text" id="tab-add-name" placeholder="추가한다탭의이름"> <button class="button" onclick="tabAddSubmit()">추가</button></p>
+      <h3>■리네임</h3>
+      <p><select id="tab-rename-list"></select> <input type="text" id="tab-rename-name" placeholder="변경후의이름"> <button class="button" onclick="tabRenameSubmit()">변경</button></p>
+      <h3>■삭제</h3>
+      <p><select id="tab-delete-list"></select> <button class="button" onclick="tabDeleteSubmit()">삭제</button></p>
     </details>
     <details>
-      <summary><span class="material-symbols-outlined">meeting_room</span>基本設定</summary>
+      <summary><span class="material-symbols-outlined">meeting_room</span>기초설정</summary>
       <TMPL_IF userRoomFlag>
       <p>
-        ゲームルーム名: <input type="text" id="config-room-name" value="<TMPL_VAR title>"><br>
-        チャットタブ　: <input type="text" id="config-room-tab" value="<TMPL_VAR tabArrayValue>"><br>
-        ステータス　　: <input type="text" id="config-room-status" value="<TMPL_VAR roomSetFormSttList>"><br>
-        ゲームシステム: <select id="config-room-game" onchange="gameChange(this.value)">
+        게임룸명: <input type="text" id="config-room-name" value="<TMPL_VAR title>"><br>
+        채팅탭　: <input type="text" id="config-room-tab" value="<TMPL_VAR tabArrayValue>"><br>
+        스테이터스　　: <input type="text" id="config-room-status" value="<TMPL_VAR roomSetFormSttList>"><br>
+        게임룰: <select id="config-room-game" onchange="gameChange(this.value)">
           <option value="sw2">ソードワールド2.x</option>
-          <option value="dx3">ダブルクロス3rd</option>
-          <option value="">その他</option>
-          <option value="bcdice">その他：BCDice-API使用</option>
+          <option value="dx3">더블크로스3rd</option>
+          <option value="">そ의他</option>
+          <option value="bcdice">そ의他：BCDice-API사용</option>
         </select><br>
       </p>
       <p id="config-room-bcdice-options" style="padding-left: 1em; display: none;">
-          <b>BCDice用オプション</b><small>(<a href="https://api-status.bcdice.org/" target="_blank">API公開サーバーの一覧</a>)</small><br>
-          APIのURL: <input type="url" id="config-room-bcdice-url" placeholder="https//..." onchange="BCDiceGet(this.value);" value="<TMPL_VAR bcdiceAPI>" style="width:20em;"><br>
-          ダイスボット: <select id="config-room-bcdice-game"></select>
+          <b>BCDice用オプション</b><small>(<a href="https://api-status.bcdice.org/" target="_blank">API공개서버의일람</a>)</small><br>
+          API의URL: <input type="url" id="config-room-bcdice-url" placeholder="https//..." onchange="BCDiceGet(this.value);" value="<TMPL_VAR bcdiceAPI>" style="width:20em;"><br>
+          다이스ボット: <select id="config-room-bcdice-game"></select>
       </p>
       <form onsubmit="roomChange();return false;">
-      <p>パスワード: <input type="password" id="config-room-password"></p>
-      <p class="center"><button>変更</button></p>
+      <p>패스워드: <input type="password" id="config-room-password"></p>
+      <p class="center"><button>변경</button></p>
       </form>
       <TMPL_ELSE>
       <p>
-        ゲームルーム名: <TMPL_VAR title><br>
-        チャットタブ　: <TMPL_VAR tabArrayValue><br>
-        ステータス　　: <TMPL_VAR SttNameListValue><br>
-        ゲームシステム: <TMPL_VAR gameSystemName><br>
+        게임룸명: <TMPL_VAR title><br>
+        채팅탭　: <TMPL_VAR tabArrayValue><br>
+        스테이터스　　: <TMPL_VAR SttNameListValue><br>
+        게임룰: <TMPL_VAR gameSystemName><br>
       </p>
       <p>
-        ※ユーザーは変更できないゲームルームです。
+        ※유저は변경できない게임룸です。
       </p>
       </TMPL_IF>
     </details>
     <details>
-      <summary onclick="getFileName();"><span class="material-symbols-outlined">drive_file_move</span>ログ初期化／保存／ルーム削除</summary>
+      <summary onclick="getFileName();"><span class="material-symbols-outlined">drive_file_move</span>로그초기화／저장／룸삭제</summary>
       <form onsubmit="resetRoom();return false;">
       <p>
-        このルームの現行ログを過去ログに格納（保存）し、初期化します。<br>
+        こ의룸의진행로그を과거로그에 넣고（저장）、초기화します。<br>
         <br>
-        <b>パスワード</b>：<input type="password" id="room-reset-password"><br>
+        <b>패스워드</b>：<input type="password" id="room-reset-password"><br>
         <br>
-        <b>最新ログ・トピック・ユニットも初期化する</b>：<input type="checkbox" id="room-reset-all" class="toggle-button" checked><label for="room-reset-all"></label><br>
-        （全員が強制退室になります）<br>
+        <b>최신로그・토픽・캐릭터も초기화한다</b>：<input type="checkbox" id="room-reset-all" class="toggle-button" checked><label for="room-reset-all"></label><br>
+        （전원が강제퇴실에 なります）<br>
         <TMPL_IF userRoomFlag>
         <br>
-        <b>ルームを削除する</b>：<input type="checkbox" id="room-delete" class="toggle-button"><label for="room-delete"></label>
+        <b>룸を삭제한다</b>：<input type="checkbox" id="room-delete" class="toggle-button"><label for="room-delete"></label>
         <TMPL_ELSE><input type="hidden" id="room-delete">
         </TMPL_IF>
       </p>
         <details open>
-          <summary>過去ログ設定</summary>
+          <summary>과거로그설정</summary>
           <p>
-            　保存される過去ログに関わる設定です。<br>
-            　ログが空の場合は過去ログは保存されないため、入力の意味はありません。<br>
+            　저장される과거로그에 関わる설정です。<br>
+            　로그が空의경우は과거로그は저장されないため、입력의意味はありません。<br>
             <br>
-            <b>ログファイル名</b>：<br>
-            <input type="text" id="room-reset-filename" pattern="^[-0-9a-zA-Z_.]+$" title="使用できる文字は、半角英数字とハイフン、アンダーバー、ピリオドのみです。"> <a class="fas fa-sync-alt link" onclick="getFileName();">日付から設定</a><br>
-            　過去ログ一覧に表示されます。<br>
-            　空欄の場合、自動的に日付からファイル名をつけます。<br>
+            <b>로그파일명</b>：<br>
+            <input type="text" id="room-reset-filename" pattern="^[-0-9a-zA-Z_.]+$" title="사용できる文字は、半角英数字とハイフン、アンダー바、ピリオド의みです。"> <a class="fas fa-sync-alt link" onclick="getFileName();">日付から설정</a><br>
+            　과거로그일람에 표시されます。<br>
+            　空란의경우、자동적에 日付から파일명をつけます。<br>
             <br>
-            <b>ログタイトル</b>：<br>
+            <b>로그타이틀</b>：<br>
             <input type="text" id="room-reset-logtitle"><br>
-            　ログのタイトルバーと見出しに表示されます。<br>
-            　空欄の場合、ゲームルーム名と同じになります。<br>
+            　로그의타이틀바と헤더에 표시されます。<br>
+            　空란의경우、게임룸명と同じ에 なります。<br>
           </p>
           </details>
-      <p class="center"><button>ログ初期化</button></p>
+      <p class="center"><button>로그초기화</button></p>
       </form>
     </details>
     <span class="close button" onclick="boxClose('config-room');">×</span>
@@ -715,67 +715,67 @@
   </div>
   
   <div class="float-box" id="member-list">
-    <h2>入室メンバー</h2>
+    <h2>입실멤버</h2>
     <p id="member-list-view"></p>
     <span class="close button" onclick="boxClose('member-list');">×</span>
   </div>
   
   <div class="float-box" id="ready-check">
-    <h2>レディチェック（準備確認）</h2>
+    <h2>레디 체크（준비확인）</h2>
     <p class="center">
-      <button onclick="readyCheckSubmit(1)">✔準備ＯＫ！</button>
-      <button onclick="readyCheckSubmit(0)">×まだ待って</button>
+      <button onclick="readyCheckSubmit(1)">✔준비ＯＫ！</button>
+      <button onclick="readyCheckSubmit(0)">×잠시만요</button>
     </p>
     <ul id="ready-list"></ul>
     <span class="close button" onclick="boxClose('ready-check');">×</span>
   </div>
   
   <div class="float-box" id="enter-form">
-    <h2>ルーム：<TMPL_VAR title></h2>
+    <h2>룸：<TMPL_VAR title></h2>
     <p>
-      名前<br>
+      이름<br>
       <input type="text" id="in-name"><br>
       <br>
-      名前色<br>
+      이름색<br>
       <span id="enter-color-area">
         <span class="color-pickr" data-pickr="in-color"></span><input type="text" id="in-color" class="selectcolor-in" list="color-list" value="#FFFFFF">
       </span><br>
       <br>
-      <button onclick="enterRoom();">入室</button>
+      <button onclick="enterRoom();">입실</button>
     </p>
     <p>
-      <button onclick="enterRomRoom();">見学入室</button>
+      <button onclick="enterRomRoom();">견학입실</button>
     </p>
     <div class="right">
-      <a href="./?mode=logs&id=<TMPL_VAR roomId>"><i class="fas fa-align-left"></i>ログ</a>
+      <a href="./?mode=logs&id=<TMPL_VAR roomId>"><i class="fas fa-align-left"></i>로그</a>
       ／
-      <a onclick="boxOpen('config-user');" href="#"><i class="fas fa-user-cog"></i>個人設定</a>
+      <a onclick="boxOpen('config-user');" href="#"><i class="fas fa-user-cog"></i>개인설정</a>
       ／
-      <a onclick="boxOpen('config-room');" href="#"><i class="fas fa-cog"></i>ルーム設定</a>
+      <a onclick="boxOpen('config-room');" href="#"><i class="fas fa-cog"></i>룸설정</a>
       ／
-      <a href="./"><i class="fas fa-undo-alt"></i>戻る</a>
+      <a href="./"><i class="fas fa-undo-alt"></i>돌아가기</a>
     </div>
   </div>
   
   <div class="float-box" id="exit-form">
-    <h2>退室</h2>
+    <h2>퇴실</h2>
     <p>
-      退室すると、以下の情報がリセットされます。<br>
-      ［ダイス欄の入力値］<br>
-      ［個人メモ］<br>
-      ［ユニット一覧のソート］<br>
+      퇴실한다と、이하의정보が리셋されます。<br>
+      ［다이스란의입력치］<br>
+      ［개인메모］<br>
+      ［캐릭터일람의정렬］<br>
       <br>
-      このルームから退室しますか？<br>
+      こ의룸から퇴실しますか？<br>
       <br>
       <button onclick="exitRoom();boxClose('exit-form');">はい</button>
     </p>
     <div class="right" style="position:absolute;right:.5em;bottom:.5em;">
-      <a href="./">退室せず部屋一覧へ移動</a>
+      <a href="./">퇴실하지 않고 룸일람으로 이동</a>
     </div>
     <span class="close button" onclick="boxClose('exit-form');">×</span>
   </div>
   <div class="float-box" id="help-window">
-    <h2>ヘルプ</h2>
+    <h2>헬프</h2>
     <div class="box-body">
       <TMPL_INCLUDE NAME="help.html">
     </div>

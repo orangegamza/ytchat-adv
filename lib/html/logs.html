@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ログ: <TMPL_VAR title> - ゆとチャadv.</title>
+  <title>로그: <TMPL_VAR title> - ゆとチャadv.</title>
   <style>
     @layer lib, base, logs;
     @import url('./lib/css/base.css?<TMPL_VAR ver>') layer(base);
@@ -17,10 +17,6 @@
   </TMPL_UNLESS>
   <script src="./lib/js/logs.js?<TMPL_VAR ver>" defer></script>
   <script>
-    <TMPL_IF liteMode>var liteMode = 1;</TMPL_IF>
-    <TMPL_UNLESS dlMode>
-    var customCSS = "<TMPL_VAR customCSS />";
-    </TMPL_UNLESS>
   </script>
 </head>
 <body id="logviewer" <TMPL_IF liteMode>class="lite"</TMPL_IF>>
@@ -30,9 +26,9 @@
   <div id="loading"><div id="loading-animation"></div></div>
   <dialog id="image-box"><img id="image-box-image"></dialog>
   <dialog id="sound-confirm">
-    このログにはＢＧＭが含まれています。<br>
-    音量設定をＯＮにしますか？<br>
-    <small>(後からでもメニューから設定変更できます)</small><br>
+    이 로그에는 BGM이 포함되어 있습니다.<br>
+    음량 설정을 ON으로 하시겠습니까?<br>
+    <small>(나중에도 메뉴에서 설정 변경 가능합니다)</small><br>
     
     <span class="mute-button" onclick="soundOn();soundConfirmClose();bgScroll();"></span>
     <span class="mute-button muted" onclick="soundOff();soundConfirmClose();"></span>
@@ -41,24 +37,24 @@
   <input type="checkbox" id="menu-toggle">
   <label for="menu-toggle" class="box"><span class="material-symbols-outlined">menu</span></label>
   <aside id="menu" class="box">
-    <h2>メニュー</h2>
+    <h2>메뉴</h2>
     <label for="menu-toggle"><span class="material-symbols-outlined">close</span></label>
     <ul id="tablist"><TMPL_LOOP TabList>
       <li><label><input type="checkbox" id="tab-on-<TMPL_VAR NUM>" checked onchange="tabSelect(<TMPL_VAR NUM>)"><b><TMPL_VAR NAME></b></label></li></TMPL_LOOP>
-      <li><label for="secret-on"><input type="checkbox" id="secret-on" onchange="secretView()"><b>秘話</b></label></li>
+      <li><label for="secret-on"><input type="checkbox" id="secret-on" onchange="secretView()"><b>귓속말</b></label></li>
     </ul>
     <dl class="options" id="log-download">
       <TMPL_UNLESS dlMode><button id="dl-button" onclick="downloadAllLogs()">ログを保存</button></TMPL_UNLESS>
     </dl>
     <dl class="options" id="options-sound">
-      <dt>サウンド音量 <span id="option-sound-view">100</span> %</dt><dd><input id="option-sound" type="range" min="0.01" max="1" step="0.01" value="1"></dd>
+      <dt>사운드음량 <span id="option-sound-view">100</span> %</dt><dd><input id="option-sound" type="range" min="0.01" max="1" step="0.01" value="1"></dd>
       <dd><span class="mute-button muted" id="option-mute-button"></span></dd>
     </dl>
     <dl class="options" id="options-logs">
-      <dt id="opt-viewmode">閲覧モード</dd>
+      <dt id="opt-viewmode">읽기모드</dd>
       <dd>
         <select id="option-view-mode">
-          <option value="normal">通常
+          <option value="normal">일반
           <option value="lite" <TMPL_IF liteMode>selected</TMPL_IF>>軽量（背景/BGMなし）
           <option value="simple">シンプル（新規タブを開く）
         </select>

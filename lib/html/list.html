@@ -90,22 +90,22 @@
     <h1>ゆとチャadv.</h1>
   </header>
   <article id="contents">
-    <h2>ゲームルーム一覧</h2>
+    <h2>ゲームルーム일람</h2>
     <TMPL_IF userRoomOn>
     <details class="left" style="margin:auto; width:32em;" <TMPL_VAR userRoomFormOpen>>
       <summary class="left" style="user-select: none">新規ルーム作成</summary>
       <form action="./" style="padding-left: 1em; background:rgba(127,127,127,0.1);" onsubmit="return formCheck();">
         <input type="hidden" name="mode" value="create">
-        ゲームルーム名: <input type="text" name="name" required><br>
+        게임 룸 이름: <input type="text" name="name" required><br>
         管理パスワード: <input type="password" name="pass"> <small>//削除・リセット用</small><br>
-        ゲームシステム: <select name="game" id="set-game" onchange="gameChange(this.value)">
+        룰: <select name="game" id="set-game" onchange="gameChange(this.value)">
           <option value="sw2">ソードワールド2.x</option>
           <option value="dx3">ダブルクロス3rd</option>
           <option value="">その他</option>
           <option value="bcdice">その他：BCDice-API使用</option>
         </select><br>
         <div id="bcdice-options" style="margin-left: 1em; display: none;">
-          <b>BCDice用オプション</b><small>(<a href="https://api-status.bcdice.org/" target="_blank">API公開サーバーの一覧</a>)</small><br>
+          <b>BCDice用オプション</b><small>(<a href="https://api-status.bcdice.org/" target="_blank">API公開サーバーの일람</a>)</small><br>
           APIのURL: <input type="url" name="bcdice-url" id="set-bcdice-url" placeholder="https//..." onchange="BCDiceGet(this.value);" style="width:20em;"><br>
           ダイスボット: <select name="bcdice-game" id="set-bcdice-game"></select>
         </div>
@@ -118,9 +118,9 @@
     </details>
     </TMPL_IF>
     <table class="list">
-      <thead><tr><th>ゲームルーム名</th><th>ゲームシステム</th><th>ログ</th><th>ログサイズ</th></tr></thead>
+      <thead><tr><th>게임 룸 이름</th><th>룰</th><th>로그</th><th>로그 사이즈</th></tr></thead>
       <TMPL_LOOP List><tr><th><a href="./?mode=room&id=<TMPL_VAR ID>"><TMPL_VAR NAME></a></th><td><TMPL_VAR GAME></td><td><a href="./?mode=logs&id=<TMPL_VAR ID>">▶</a></td><td><TMPL_VAR SIZE></td></tr></TMPL_LOOP>
-      <tfoot><tr style="border:none;"><td colspan="4" class="right" style="padding:1rem 0"><a href="./?mode=logs">>>ログ一覧</a></td></tr></tfoot>
+      <tfoot><tr style="border:none;"><td colspan="4" class="right" style="padding:1rem 0"><a href="./?mode=logs">>>로그일람</a></td></tr></tfoot>
     </table>
   </article>
   <TMPL_IF home><a href="<TMPL_VAR home>" style="position:absolute;top:1rem;right:1rem"><i class="fas fa-home"></i>戻る</a></TMPL_IF>
